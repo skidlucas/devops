@@ -4,4 +4,24 @@ description de la chaine de build : version plus formelle du schéma de simur / 
 faire un plugin maven ou un script qui fait par exemple "mvn mutation" et lance tout le programme de tests
 ===> SCRIPT
 
-est ce qu'on compile une fois et on agit sur les .class pour créer des mutants ou est ce qu'on modifie les .java pour créer des mutants et on compile une fois par mutant ?
+-- il faut modifier le generate-sources de mvn pour changer la chaine de build (et insérer les mutations de spoon) quand on fait "mvn test" par exemple --
+il faut que quand on appelle mvn test on utilise le processeur de spoon et pas celui de base
+					--- vérifier les properties de mvn ---
+
+script : src => !! ici les mutations ==> compilation => lancer les tests (que utiles?)
+									 ==> compilation => lancer les tests (que utiles?)
+									 ==> compilation => lancer les tests (que utiles?) 
+									 ...
+====> faire des .xml avec les stats (nb mutations, nb mutants tués, ...) ====> en faire un .html 
+
+MVP:
+savoir faire UNE chaine de A à Z 
+ + ajouter des mutations pertinentes ?
+ + optimiser le temps (éviter de lancer TOUS les tests à chaque mutation)
+
+QUESTIONS
+
+
+
+LIENS
+https://github.com/SpoonLabs (spoon-maven-plugin)
