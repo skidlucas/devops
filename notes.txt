@@ -1,0 +1,7 @@
+description de la chaine de build : version plus formelle du schéma de simur / lucas
+
+
+faire un plugin maven ou un script qui fait par exemple "mvn mutation" et lance tout le programme de tests
+===> SCRIPT
+
+est ce qu'on compile une fois et on agit sur les .class pour créer des mutants ou est ce qu'on modifie les .java pour créer des mutants et on compile une fois par mutant ?
