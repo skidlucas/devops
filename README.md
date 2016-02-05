@@ -1,2 +1,4 @@
-# devops
-Projet DevOps SI4 - Polytech Nice | Lucas Martinez, Simon Paris, Lucas Soumille
+# DevOps 8 : Test par mutation
+
+## Equipe composée de Lucas Martinez, Simon Paris et Lucas Soumille
+
