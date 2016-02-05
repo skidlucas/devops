@@ -19,7 +19,17 @@ savoir faire UNE chaine de A à Z
  + ajouter des mutations pertinentes ?
  + optimiser le temps (éviter de lancer TOUS les tests à chaque mutation)
 
-QUESTIONS
+
+---------------------------NOTES SIMUR + JPP---------------------------
+normalement, tant qu'on évite de toucher aux private, public, etc..., on doit éviter les erreurs de compil.
+éviter les erreurs d'exécution car le banc de test ne sera meme pas exécuté
+ne pas lancer des mutations sur tout le code (c'est sur que ça va planter)
+
+faire une modif à un endroit, puis on incrémente....=> on fait grossir notre mutant, tant qu'il survit on continue
+faire des mutations élémentaires dans un premier temps et les combiner après ??
+faire une boucle : t'attrapes une partie du code, tu fais tes mutations, et suivant les résultats tu recommences avec des arguments différents ??
+réfléchir à une stratégie pour appliquer les mutations en boucle et à sa condition d'arret 
+est ce qu'on chope les feuilles de l'arbre syntaxique et on remonte petit à petit ?
 
 
 
