@@ -31,7 +31,9 @@ faire une boucle : t'attrapes une partie du code, tu fais tes mutations, et suiv
 réfléchir à une stratégie pour appliquer les mutations en boucle et à sa condition d'arret 
 est ce qu'on chope les feuilles de l'arbre syntaxique et on remonte petit à petit ?
 
-
+REFLEXIONS POST DISCUSSION:
+BUT : que le mutant soit tué par les tests
+donc pourquoi le faire grossir ? s'il survit c'est qu'il y a un problème ??
 
 LIENS
 https://github.com/SpoonLabs (spoon-maven-plugin)
