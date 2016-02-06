@@ -35,5 +35,6 @@ REFLEXIONS POST DISCUSSION:
 BUT : que le mutant soit tué par les tests
 donc pourquoi le faire grossir ? s'il survit c'est qu'il y a un problème ??
 
+
 LIENS
 https://github.com/SpoonLabs (spoon-maven-plugin)
