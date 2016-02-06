@@ -9,5 +9,5 @@ il permet aux développeurs de tester, d'analyser l'efficacité de leurs bancs d
 > Pour cela, nous proposons à l'utilisateur de choisir parmi différentes mutations et 
 de faire varier leur fréquence d'apparition dans le code sélectionné.
     
-> Afin de garantir un temps d'exécution raisonnable, dès qu'un test est détecté faillible, 
-il sera exclu du banc pour les tests des futurs mutations et directement reporté en erreur dans les résultats finaux.
+> Afin de garantir un temps d'exécution raisonnable, nous exécutons les tests correspondant 
+uniquement aux méthodes qui ont subi des mutations.
