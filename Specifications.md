@@ -28,7 +28,7 @@ Concernant la phase _test_, Maven va pouvoir soumettre nos mutants compilés au 
 
 Il nous paraît donc impératif de remplir ces conditions pour pouvoir proposer des résultats avec un minimum de valeur.
 
-Nous obtenons suite à cette phase de test un fichier XML par mutant. Notre script bash va alors appeler un programme python qui écrira les informations souhaitées provenant de plusieurs fichiers XML dans un seul fichier HTML. Dans un soucis de présentation on utilisera les frameworks Bootstrap et HightChart.
+Nous obtenons suite à cette phase de test un fichier XML par mutant. Notre script bash va alors appeler un programme python qui écrira les informations souhaitées provenant de plusieurs fichiers XML dans un seul fichier HTML. Dans un souci de présentation on utilisera les frameworks Bootstrap et HightChart.
 
 ## Mutations
 ### Mutations disponibles
