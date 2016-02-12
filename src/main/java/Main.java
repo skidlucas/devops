@@ -3,7 +3,10 @@
  * @version 05/02/16
  */
 public class Main {
-    void main(){
-        System.out.println("coucou");
+
+    public int getInt(){
+        int i = 0;
+        for( ; i < 10 ; ++i);
+        return i;
     }
 }
