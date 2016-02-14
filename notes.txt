@@ -40,3 +40,5 @@ https://github.com/SpoonLabs (spoon-maven-plugin)
 
 Questions
 timeout boucle infinie
+
+=> garder une trace des mutants de A à Z (pas dans le mvp)
