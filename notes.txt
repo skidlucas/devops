@@ -20,7 +20,7 @@ savoir faire UNE chaine de A à Z
  + optimiser le temps (éviter de lancer TOUS les tests à chaque mutation)
 
 
----------------------------NOTES SIMUR + JPP---------------------------
+---------------------------NOTES SIMUR---------------------------
 normalement, tant qu'on évite de toucher aux private, public, etc..., on doit éviter les erreurs de compil.
 éviter les erreurs d'exécution car le banc de test ne sera meme pas exécuté
 ne pas lancer des mutations sur tout le code (c'est sur que ça va planter)
