@@ -8,8 +8,7 @@ public class App
 {
     public static int calc(String s){
         int i = 0;
-        while (i < 10)
-            i = i + 2;
+        i = i + 10;
         return i;
     }
     public static void main( String[] args )
