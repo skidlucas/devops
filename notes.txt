@@ -51,3 +51,11 @@ POUR VENDREDI:
 - on importe un src/ dans notre transfo-code/src et on garde le pom.xml de base de notre projet(pour l'instant)
 - on rajoute un processeur avec un script (après ça sera un par un à partir d'une liste) dans le pom.xml de ce projet
 - on lance le script entier
+
+
+=> TODO pour vendredi: ajouter un peu plus de présentation au html
+
+QUESTIONS pour vendredi:
+- comment fusionner 2 pom.xml ?
+- faire un mvn test dans transfo-code avec les dépendances de processors ?
+- trop de niveaux de lien symbolique à cause du chemin relatif ?
