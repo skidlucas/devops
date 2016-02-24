@@ -13,3 +13,6 @@ hs_err_pid*
 
 .idea/
 devops.iml
+processors/processors.iml
+transformation-code/target/
+transformation-code/transformation-code.iml

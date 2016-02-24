@@ -1,5 +1,3 @@
-package fr.inria.gforge.spoon;
-
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -11,8 +9,7 @@ public class AppTest {
 
     @Test
     public void calcTest(){
-        String s = "ll";
-        int i = App.calc(s);
+        int i = App.calc();
         Assert.assertEquals(10, i);
     }
 }
