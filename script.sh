@@ -42,7 +42,7 @@ if [ $# -eq 1 ]
 				./python/readXML.py $proc
 
 				#On affiche ce rapport avec le browser par défaut
-				xdg-open ./python/rapMutant.html &
+				xdg-open ./python/report/rapMutant.html &
 			done
 
 	else

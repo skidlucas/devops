@@ -5,17 +5,23 @@ import os
 from os import listdir
 from os.path import isfile, join
 
-html = open('./python/rapMutant.html', 'w')
+html = open('./python/report/rapMutant.html', 'w')
 html.write('<!DOCTYPE html>\n')
-html.write('<html>\n')
-html.write('<head>\n')
-html.write('<title>Rapport sur la guerre des mutants</title>\n')
-html.write('</head>\n')
-html.write('<body>\n')
-html.write('<h1>Rapport sur la guerre des mutants</h1>\n')
-html.write('<p> Avec le processeur : ')
-html.write(sys.argv[1])
+html.write('\t<html>\n')
+html.write('\t\t<head>\n')
+html.write('\t\t\t<meta charset="UTF-8">\n')
+html.write('\t\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge">\n')
+html.write('\t\t\t<meta name="viewport" content="width=device-width, initial-scale=1">\n')
+html.write('\t\t\t<title>Rapport sur la guerre des mutants</title>\n')
+html.write('\t\t\t<link href="css/bootstrap.min.css" rel="stylesheet">\n')
+html.write('\t\t\t<link href="css/style.css" rel="stylesheet">\n')
+html.write('\t\t</head>\n')
+html.write('\t\t<body>\n')
+html.write('\t\t\t<h1>Rapport sur la guerre des mutants</h1>\n')
+html.write('\t\t\t<p> Processeur utilisé: ')
+html.write('<b>' + sys.argv[1] + '</b>')
 html.write('</p>')
+
 testpath = './transformation-code/src/test/java/'
 
 testfiles = [f for f in listdir(testpath) if isfile(join(testpath, f))]
@@ -30,17 +36,18 @@ for elt in testfiles:
 		split = clashSpace.split(' ')
 		if split[0] == '<testcase' :
 			res = ' '.join(split).strip('></')
-			html.write('<p>')
+			html.write('\t\t\t\t<p>')
 			html.write(res)
 			html.write('</p>')
 			html.write('\n')
 		if split[0] == '<failure' :
 			msg_failure = line.split('>')
-			html.write('<p>')
+			html.write('\t\t\t\t<p>')
 			html.write(msg_failure[1])
 			html.write('</p>')
 			html.write('\n')
 
-
-html.write('</body>')
+html.write('\t\t\t<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>\n')
+html.write('\t\t\t<script src="js/bootstrap.min.js"></script\n')
+html.write('\t\t</body>')
 html.write('</html>')
