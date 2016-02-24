@@ -56,3 +56,4 @@ POUR VENDREDI:
 QUESTIONS pour vendredi:
 - comment fusionner 2 pom.xml ?
 - comment lancer le butineur en background ?
+- faire un mvn test dans transfo-code avec les dépendances de processors ?
