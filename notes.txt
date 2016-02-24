@@ -53,7 +53,9 @@ POUR VENDREDI:
 - on lance le script entier
 
 
+=> TODO pour vendredi: ajouter un peu plus de présentation au html
+
 QUESTIONS pour vendredi:
 - comment fusionner 2 pom.xml ?
-- comment lancer le butineur en background ?
 - faire un mvn test dans transfo-code avec les dépendances de processors ?
+- trop de niveaux de lien symbolique à cause du chemin relatif ?
