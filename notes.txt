@@ -51,3 +51,8 @@ POUR VENDREDI:
 - on importe un src/ dans notre transfo-code/src et on garde le pom.xml de base de notre projet(pour l'instant)
 - on rajoute un processeur avec un script (après ça sera un par un à partir d'une liste) dans le pom.xml de ce projet
 - on lance le script entier
+
+
+QUESTIONS pour vendredi:
+- comment fusionner 2 pom.xml ?
+- comment lancer le butineur en background ?

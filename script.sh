@@ -24,18 +24,27 @@ if [ $# -eq 1 ]
 		ln -sv $1/pom.xml ./transformation-code/pom.xml #TODO suite: au lieu de lier le pom directement comme ici
 		echo -e "OK\n"
 
-		#On ajoute le processeur (un seul pour l'instant, déjà connu) dans le pom.xml
-		PROC="OperatorToMinusProcessor"
-		sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$PROC\2/" ./transformation-code/pom.xml
+		#On parcourt la liste des processeurs et on les ajoute dans un tableau
+		procArray=($(ls ./processors/src/main/java | cut -f1 -d'.'))
 
-		#On lance mvn clean test qui va se servir de spoon pour muter le code source fourni en paramètre du script
-		mvn clean test
+		#Pour chaque processeur de la liste:
+		for proc in ${procArray[@]}
+			do 
+				#On ajoute le processeur dans le pom.xml
+				sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$proc\2/" ./transformation-code/pom.xml
 
-		#On exécute un script python pour lire le rapport XML des tests et le transformer en HTML
-		./python/readXML.py
+				#On lance mvn clean test qui va se servir de spoon pour muter le code source fourni en paramètre du script
+				mvn clean test
 
-		#On affiche ce rapport avec le browser par défaut
-		xdg-open ./python/rapMutant.html &
+				#la suite est TMP : pour l'instant un rapport par mutation
+
+				#On exécute un script python pour lire le rapport XML des tests et le transformer en HTML
+				./python/readXML.py $proc
+
+				#On affiche ce rapport avec le browser par défaut
+				xdg-open ./python/rapMutant.html &
+			done
+
 	else
 		echo "ERREUR: trop d'argument, veuillez indiquer uniquement le chemin absolu de votre code à muter en paramètre."
 	    echo "Veuillez indiquer la racine du projet et non pas uniquement le dossier src"

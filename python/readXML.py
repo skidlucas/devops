@@ -1,4 +1,5 @@
 #! /usr/bin/env python3.4
+import sys
 
 xml = open('./transformation-code/target/surefire-reports/TEST-AppTest.xml', 'r')
 
@@ -10,6 +11,9 @@ html.write('<title>Rapport sur la guerre des mutants</title>\n')
 html.write('</head>\n')
 html.write('<body>\n')
 html.write('<h1>Rapport sur la guerre des mutants</h1>\n')
+html.write('<p> Avec le processeur : ')
+html.write(sys.argv[1])
+html.write('</p>')
 
 
 for line in xml:
