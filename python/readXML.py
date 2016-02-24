@@ -1,8 +1,8 @@
 #! /usr/bin/env python3.4
 
-xml = open('TEST-MainTest.xml', 'r')
+xml = open('../spoon-maven-plugin-examples-master/transformation-code/target/surefire-reports/TEST-fr.inria.gforge.spoon.AppTest.xml', 'r')
 
-html = open('rapMutant.html', 'w')
+html = open('../python/rapMutant.html', 'w')
 html.write('<!DOCTYPE html>\n')
 html.write('<html>\n')
 html.write('<head>\n')
@@ -19,6 +19,12 @@ for line in xml:
 		res = ' '.join(split).strip('></')
 		html.write('<p>')
 		html.write(res)
+		html.write('</p>')
+		html.write('\n')
+	if split[0] == '<failure' :
+		msg_failure = line.split('>')
+		html.write('<p>')
+		html.write(msg_failure[1])
 		html.write('</p>')
 		html.write('\n')
 
