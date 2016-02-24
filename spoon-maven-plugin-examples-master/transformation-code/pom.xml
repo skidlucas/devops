@@ -49,6 +49,7 @@
             <processor>fr.inria.gforge.spoon.transformations.NotNullCheckAdderProcessor</processor>
             <processor>fr.inria.gforge.spoon.transformations.MutationProcessor</processor>
             <processor>fr.inria.gforge.spoon.transformations.BinaryOperatorMutator</processor>
+            <processor>fr.inria.gforge.spoon.transformations.OtherMutation</processor>
           </processors>
           <compileOriginalSources>false</compileOriginalSources>
         </configuration>
