@@ -40,7 +40,7 @@
                 </executions>
                 <configuration>
                     <processors>
-                        <processor>OperatorToMinusProcessor</processor>
+                        <processor></processor>
                     </processors>
                     <compileOriginalSources>false</compileOriginalSources>
                 </configuration>
