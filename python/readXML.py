@@ -1,4 +1,5 @@
 #! /usr/bin/env python3.4
+# author Paris Simon - 24 fevrier 2016
 
 xml = open('../spoon-maven-plugin-examples-master/transformation-code/target/surefire-reports/TEST-fr.inria.gforge.spoon.AppTest.xml', 'r')
 
