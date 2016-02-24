@@ -1,15 +1,15 @@
 #! /usr/bin/env python3.4
 
-xml = open('../spoon-maven-plugin-examples-master/transformation-code/target/surefire-reports/TEST-fr.inria.gforge.spoon.AppTest.xml', 'r')
+xml = open('./transformation-code/target/surefire-reports/TEST-AppTest.xml', 'r')
 
-html = open('../python/rapMutant.html', 'w')
+html = open('./python/rapMutant.html', 'w')
 html.write('<!DOCTYPE html>\n')
 html.write('<html>\n')
 html.write('<head>\n')
-html.write('<title>rapport sur la guerre des mutants</title>\n')
+html.write('<title>Rapport sur la guerre des mutants</title>\n')
 html.write('</head>\n')
 html.write('<body>\n')
-html.write('<h1>rapport sur la guerre des mutants</h1>\n')
+html.write('<h1>Rapport sur la guerre des mutants</h1>\n')
 
 
 for line in xml:
