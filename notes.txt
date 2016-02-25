@@ -59,3 +59,4 @@ QUESTIONS pour vendredi:
 - comment fusionner 2 pom.xml ?
 - faire un mvn test dans transfo-code avec les dépendances de processors ?
 - trop de niveaux de lien symbolique à cause du chemin relatif ?
+- éviter le le print sur la console

@@ -27,6 +27,9 @@ if [ $# -eq 1 ]
 		#On parcourt la liste des processeurs et on les ajoute dans un tableau
 		procArray=($(ls ./processors/src/main/java | cut -f1 -d'.'))
 
+		#On init le .html
+		./python/initHTML.py
+
 		#Pour chaque processeur de la liste:
 		for proc in ${procArray[@]}
 			do 
@@ -38,12 +41,14 @@ if [ $# -eq 1 ]
 
 				#la suite est TMP : pour l'instant un rapport par mutation
 
-				#On exécute un script python pour lire le rapport XML des tests et le transformer en HTML
-				./python/readXML.py $proc
-
-				#On affiche ce rapport avec le browser par défaut
-				xdg-open ./python/report/rapMutant.html &
+				#On exécute un script python pour lire le rapport XML des tests et l'inserer dans le .html
+				./python/incrHTML.py $proc
 			done
+
+		#On termine le .html
+		./python/endHTML.py
+		#On affiche ce rapport avec le browser par défaut
+		xdg-open ./python/report/rapMutant.html &
 
 	else
 		echo "ERREUR: trop d'argument, veuillez indiquer uniquement le chemin absolu de votre code à muter en paramètre."
