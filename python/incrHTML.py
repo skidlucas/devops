@@ -10,9 +10,9 @@ html = open('./python/report/rapMutant.html', 'a')
 testpath = './transformation-code/src/test/java/'
 testfiles = [f for f in listdir(testpath) if isfile(join(testpath, f))]
 
-html.write('\t\t<br /><p> Processeur utilisé: ')
-html.write('<b>' + sys.argv[1] + '</b>')
-html.write('</p>\n')
+html.write('\t\t<br /><div>Processeur utilisé:' )
+html.write('<span class="processor">' + sys.argv[1] + '</span>')
+html.write('</div>\n')
 
 alive = 0 #boolean pour savoir si mon mutant est vivant
 for elt in testfiles:
@@ -25,17 +25,17 @@ for elt in testfiles:
 		split = clashSpace.split(' ')
 		if split[0] == '<testcase' :
 			res = ' '.join(split).strip('></')
-			html.write('\t\t<p>')
+			html.write('\t\t<div>')
 			html.write(res)
-			html.write('</p>')
+			html.write('</div>')
 			html.write('\n')
 			# mon mutant peut survivre
 			alive = 1
 		if split[0] == '<failure' :
 			msg_failure = line.split('>')
-			html.write('\t\t<p>')
+			html.write('\t\t<div class="fail">')
 			html.write(msg_failure[1])
-			html.write('</p>')
+			html.write('</div>')
 			html.write('\n')
 			alive = 0
 

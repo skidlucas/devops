@@ -3,6 +3,14 @@ body {
     color: #000;
 }
 
-h1 {
+h1,h3 {
 	text-align: center;
+}
+
+.processor {
+	font-weight: bold;
+	font-size: 15px;
+}
+.fail {
+	color: red;
 }
