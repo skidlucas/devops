@@ -10,10 +10,10 @@ html = open('./python/report/rapMutant.html', 'a')
 testpath = './transformation-code/src/test/java/'
 testfiles = [f for f in listdir(testpath) if isfile(join(testpath, f))]
 
-html.write('\t\t<br /><div>Processeur utilisé:' )
-html.write('<span class="processor">' + sys.argv[1] + '</span>')
+html.write('\t\t<br />\n\t\t<div class="processor">Processeur utilisé: ' )
+html.write('<span class="processorName">' + sys.argv[1] + '</span>')
 html.write('</div>\n')
-
+html.write('\t\t<div class="resultsPerProc">\n')
 alive = 0 #boolean pour savoir si mon mutant est vivant
 for elt in testfiles:
 	test = os.path.splitext(elt)[0]
@@ -25,7 +25,7 @@ for elt in testfiles:
 		split = clashSpace.split(' ')
 		if split[0] == '<testcase' :
 			res = ' '.join(split).strip('></')
-			html.write('\t\t<div>')
+			html.write('\t\t\t<div>')
 			html.write(res)
 			html.write('</div>')
 			html.write('\n')
@@ -33,7 +33,7 @@ for elt in testfiles:
 			alive = 1
 		if split[0] == '<failure' :
 			msg_failure = line.split('>')
-			html.write('\t\t<div class="fail">')
+			html.write('\t\t\t<div class="fail">')
 			html.write(msg_failure[1])
 			html.write('</div>')
 			html.write('\n')
@@ -56,3 +56,5 @@ for elt in testfiles:
 	cWrite.write(str(newD) + '.' + str(newA))
 	cRead.close()
 	cWrite.close()
+
+html.write('\t\t</div>')

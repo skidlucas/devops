@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background: #fff;
     color: #000;
 }
 
@@ -7,7 +7,24 @@ h1,h3 {
 	text-align: center;
 }
 
-.processor {
+#deadpoolLeft{
+	float: left;
+}
+
+#deadpoolRight{
+	float: right;
+}
+
+.processor{
+	text-align: center;
+	text-decoration: underline;
+}
+
+.resultsPerProc{
+	text-align: center;
+}
+
+.processorName {
 	font-weight: bold;
 	font-size: 15px;
 }

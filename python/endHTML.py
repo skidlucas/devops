@@ -19,7 +19,7 @@ for lineC in cRead :
 #		<input id="success" style="display: none" value="5">
 #		<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
-html.write('\t\t<input id="fail" style="display: none" value="' + d + '">\n')
+html.write('\n\t\t<input id="fail" style="display: none" value="' + d + '">\n')
 html.write('\t\t<input id="success" style="display: none" value="' + a + '">\n')
 html.write('\t\t<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>\n')
 
