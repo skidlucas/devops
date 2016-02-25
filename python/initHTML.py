@@ -24,3 +24,8 @@ html.write('\t\t<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3
 html.write('\t\t<script src="js/bootstrap.min.js"></script\n')
 html.write('\t</body>\n')
 html.write('</html>')
+
+#init count.txt
+c = open('./python/count.txt', 'w')
+c.write('0.0')
+c.close()
