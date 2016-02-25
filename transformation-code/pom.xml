@@ -40,7 +40,7 @@
                 </executions>
                 <configuration>
                     <processors>
-                        <processor>Processors.OperatorToMulProcessor</processor>
+                        <processor>OperatorToMulProcessor</processor>
                     </processors>
                     <compileOriginalSources>false</compileOriginalSources>
                 </configuration>

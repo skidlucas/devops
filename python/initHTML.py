@@ -20,11 +20,6 @@ html.write('\t</head>\n')
 html.write('\t<body>\n')
 html.write('\t\t<h1>Rapport sur la guerre des mutants</h1>\n')
 
-html.write('\t\t<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>\n')
-html.write('\t\t<script src="js/bootstrap.min.js"></script\n')
-html.write('\t</body>\n')
-html.write('</html>')
-
 #init count.txt
 c = open('./python/count.txt', 'w')
 c.write('0.0')
