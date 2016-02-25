@@ -25,7 +25,7 @@ if [ $# -eq 1 ]
 		echo -e "OK\n"
 
 		#On parcourt la liste des processeurs et on les ajoute dans un tableau
-		procArray=($(ls ./processors/src/main/java | cut -f1 -d'.'))
+		procArray=($(ls ./processors/src/main/java/Processors/ | cut -f1 -d'.'))
 
 		#On init le .html
 		./python/initHTML.py
