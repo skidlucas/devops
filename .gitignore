@@ -17,4 +17,4 @@ processors/processors.iml
 transformation-code/target/
 transformation-code/transformation-code.iml
 
-python/*.html
+python/report/*.html
