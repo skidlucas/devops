@@ -61,4 +61,5 @@ QUESTIONS pour vendredi:
 - trop de niveaux de lien symbolique à cause du chemin relatif ?
 - éviter le le print sur la console?
 - utile de print les mutants fail?
+- afficher un graphique par mutation ou un général?
 - mutation orientée objet?
