@@ -68,8 +68,11 @@ QUESTIONS pour vendredi:
 - Choix des processeurs (dans le script)
 - Choix des selecteurs (dans le script)
 - Ecrire les selectors dans le .java 
-- Fusionner les deux poms
+0 Fusionner les deux poms
 0 Gérer un data.txt // fichier JS
-O compter les mort-nés, mort-exécutés (error) et les fails (failure)
+- supprimer le data.txt après le script
+- compter les mort-nés, (si y a pas le xml)
+0 mort-exécutés (error) et les fails (failure)
 - Faire des processeurs
--camembert avec les errors
+0 camembert avec les errors
+- camembert avec les mort-nés (quand pierre aura fait le python)

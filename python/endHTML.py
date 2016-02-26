@@ -30,6 +30,6 @@ html.write('\t\t<script src="https://code.highcharts.com/highcharts.js"></script
 html.write('\t\t<script src="https://code.highcharts.com/modules/exporting.js"></script>\n')
 html.write('\t\t<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>\n')
 html.write('\t\t<script src="js/bootstrap.min.js"></script>\n')
-html.write('\t\t<script src="js/pie.js"></script>\n')
+html.write('\t\t<script src="js/donut.js"></script>\n')
 html.write('\t</body>\n')
 html.write('</html>')
