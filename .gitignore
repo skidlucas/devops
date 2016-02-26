@@ -21,3 +21,4 @@ python/report/*.html
 python/count.txt
 transformation-code/
 processors/target/
+Maven Logs/
