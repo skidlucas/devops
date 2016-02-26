@@ -63,3 +63,12 @@ QUESTIONS pour vendredi:
 - utile de print les mutants fail?
 - afficher un graphique par mutation ou un général?
 - mutation orientée objet?
+
+=> TODO : après premiere presentation
+- Choix des processeurs (dans le script)
+- Choix des selecteurs (dans le script)
+- Ecrire les selectors dans le .java 
+- Fusionner les deux poms
+- Gérer un data.txt // fichier JS
+- compter les mort-nés, mort-exécutés (error) et les fails (failure)
+- Faire des processeurs
