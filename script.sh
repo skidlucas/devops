@@ -16,21 +16,24 @@ if [ $# -eq 1 ]
 		echo "Nettoyage préalable..." #faire les vérifs nécessaires
 		rm -rf ./transformation-code/*
 		mkdir -p ./transformation-code/src/
-		#cp pomTransfoDefault.xml ./transformation-code/pom.xml #TODO: garder le pom de transfo-code par défaut, puis ajouter les dépendances du source à importer
+		cp pomTransfoDefault.xml ./transformation-code/pom.xml #On copie le pom qui provient de notre projet
 		echo -e "OK\n"
 
 		echo "Création des liens symboliques..." #faire les vérifs nécessaires
 		ln -sv $1/src/* ./transformation-code/src/
-		#TODO: On fusionne les deux pom.xml
-		# dependencies=($(sed -e '/<dependency>/,/<\/dependency>/!d' pom.xml))
-		# for dep in ${dependencies[@]}
-		# 	do
-		# 		echo -e "$dep"
-		# 	done
-		
-		#sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$proc\2/" ./transformation-code/pom.xml
 
-		ln -sv $1/pom.xml ./transformation-code/pom.xml #TODO suite: au lieu de lier le pom directement comme ici
+		#TODO: On fusionne les deux pom.xml en important les dépendances et les plugins du src à muter
+		matchDep='<dependencies>'
+		matchPlu='<plugins>'
+
+		sed -e '/<dependency>/,/<\/dependency>/!d' $1/pom.xml > dependencies.txt
+		sed -i "/$matchDep/r dependencies.txt" ./transformation-code/pom.xml
+
+		sed -e '/<plugin>/,/<\/plugin>/!d' $1/pom.xml > plugins.txt
+		sed -i "/$matchPlu/r plugins.txt" ./transformation-code/pom.xml
+
+		rm dependencies.txt plugins.txt
+
 		echo -e "OK\n"
 
 		mvn package -pl processors
