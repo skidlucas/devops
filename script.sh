@@ -21,9 +21,19 @@ if [ $# -eq 1 ]
 
 		echo "Création des liens symboliques..." #faire les vérifs nécessaires
 		ln -sv $1/src/* ./transformation-code/src/
+		#TODO: On fusionne les deux pom.xml
+		# dependencies=($(sed -e '/<dependency>/,/<\/dependency>/!d' pom.xml))
+		# for dep in ${dependencies[@]}
+		# 	do
+		# 		echo -e "$dep"
+		# 	done
+		
+		#sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$proc\2/" ./transformation-code/pom.xml
+
 		ln -sv $1/pom.xml ./transformation-code/pom.xml #TODO suite: au lieu de lier le pom directement comme ici
 		echo -e "OK\n"
 
+		mvn package -pl processors
 		#On parcourt la liste des processeurs et on les ajoute dans un tableau
 		procArray=($(ls ./processors/src/main/java/ | cut -f1 -d'.'))
 
@@ -37,7 +47,7 @@ if [ $# -eq 1 ]
 				sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$proc\2/" ./transformation-code/pom.xml
 
 				#On lance mvn clean test qui va se servir de spoon pour muter le code source fourni en paramètre du script
-				mvn clean test
+				mvn clean test -pl transformation-code
 
 				#la suite est TMP : pour l'instant un rapport par mutation
 
