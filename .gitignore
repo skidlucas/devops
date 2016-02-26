@@ -19,4 +19,4 @@ transformation-code/transformation-code.iml
 
 python/report/*.html
 python/count.txt
-transformation/src/*
+transformation/*
