@@ -29,20 +29,23 @@ public class LoopIterationProcessor extends AbstractProcessor<CtElement> {
         CtLoop loop = (CtLoop) candidate;
         CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
         CtCodeSnippetStatement newDeclare = getFactory().Core().createCodeSnippetStatement();
+        CtCodeSnippetStatement endLoop = getFactory().Core().createCodeSnippetStatement();
         CtStatement body = loop.getBody();//je recupere le corps de la boucle
-        newDeclare.setValue("int Round100Loop = 0");
+        newDeclare.setValue("{int Round100Loop = 0");
+        loop.insertBefore(newDeclare);
         if(loop instanceof CtForImpl){
             CtForImpl forLoop = (CtForImpl) loop;
-            forLoop.addForInit(newDeclare);
             forLoop.setExpression(null);//je supprime la condition
         } else if (loop instanceof CtWhileImpl){
-            loop.insertBefore(newDeclare);
             CtWhileImpl whileLoop = (CtWhileImpl) loop;
             whileLoop.getLoopingExpression();//je supprime la condition
         }
         newStatement.setValue("if(Round100Loop++ == 100)" +
                 "break");
         body.insertAfter(newStatement);
+        endLoop.setValue("}//");
+        loop.insertAfter(endLoop);
+
 
 /*
     CtStatement state = (CtStatement) candidate;
