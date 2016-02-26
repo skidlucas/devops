@@ -69,6 +69,7 @@ QUESTIONS pour vendredi:
 - Choix des selecteurs (dans le script)
 - Ecrire les selectors dans le .java 
 - Fusionner les deux poms
-- Gérer un data.txt // fichier JS
-- compter les mort-nés, mort-exécutés (error) et les fails (failure)
+0 Gérer un data.txt // fichier JS
+O compter les mort-nés, mort-exécutés (error) et les fails (failure)
 - Faire des processeurs
+-camembert avec les errors

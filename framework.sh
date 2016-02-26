@@ -38,10 +38,10 @@ if [ $# -eq 1 ]
 				mvn test -pl transformation-code > "./Maven Logs/codeWith$proc.txt"
 				echo -e "OK\n"
 
-				#On exécute un script python pour lire le rapport XML des tests et l'inserer dans le .html
-				./python/incrHTML.py $proc
+				#On exécute un script python pour lire le rapport XML des tests et l'inserer dans un .txt
+				./python/data.py $proc
 			done
-
+			
 		./script/end.sh
 
 	else
