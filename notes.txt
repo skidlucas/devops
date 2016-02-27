@@ -77,3 +77,4 @@ QUESTIONS pour vendredi:
 0 camembert avec les errors
 - camembert avec les mort-nés (quand pierre aura fait le python)
 - pouvoir arreter le script completement
+- afficher quand une étape fail dans le shell et gérer le cas
