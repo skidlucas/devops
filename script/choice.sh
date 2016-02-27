@@ -17,6 +17,7 @@ do
             if [ ${#procChosen[@]} -eq 0 ]; then
                 echo "Aucun processeur choisi, veuillez en choisir un au minimum."
             else
+                echo -e "Lancement du framework de tests par mutation...\n"
                 break
             fi
             ;;
@@ -24,14 +25,14 @@ do
             exit 1
             ;;
         "$proc")
-            echo "Vous avez choisi $proc"
+            echo "Vous avez choisi $proc."
             if [[ " ${procChosen[@]} " =~ " ${proc} " ]]; then
                 echo "Vous avez déjà choisi ce processeur."
             else
                 procChosen=("${procChosen[@]}" $proc)
             fi
             ;;
-        *) echo 'Option incorrecte';;
+        *) echo 'Option incorrecte.';;
     esac
 done
 
