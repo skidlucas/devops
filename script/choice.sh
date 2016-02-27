@@ -4,7 +4,7 @@ PS3='Choix: '
 
 echo -e 'Choisissez le(s) processeur(s) que vous souhaitez utiliser: \n'
 #On parcourt la liste des processeurs et on les ajoute dans un tableau
-procArray=($(ls ./processors/src/main/java/ | cut -f1 -d'.'))
+procArray=($(ls ./processors/src/main/java/*Processor.java | xargs -n1 basename | cut -f1 -d'.'))
 procArray=("${procArray[@]}" "Lancer le framework")
 procArray=("${procArray[@]}" "Quitter")
 
