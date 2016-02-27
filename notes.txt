@@ -65,7 +65,7 @@ QUESTIONS pour vendredi:
 - mutation orientée objet?
 
 => TODO : après premiere presentation
-- Choix des processeurs (dans le script)
+0 Choix des processeurs (dans le script)
 - Choix des selecteurs (dans le script)
 - Ecrire les selectors dans le .java 
 0 Fusionner les deux poms
@@ -76,3 +76,4 @@ QUESTIONS pour vendredi:
 - Faire des processeurs
 0 camembert avec les errors
 - camembert avec les mort-nés (quand pierre aura fait le python)
+- pouvoir arreter le script completement

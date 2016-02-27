@@ -19,29 +19,10 @@ if [ $# -eq 1 ]
 		#Initialisation
 		./script/init.sh $1
 	
-		# Faire un script qui permet à l'utilisateur de choisir les processeurs à partir de la liste des processeurs
-		# ex : ./script/choice.sh 
-		# lance un menu shell qui fait choisir un processeur et passe ce processeur en paramètre du prochain script
-
-
-		#On parcourt la liste des processeurs et on les ajoute dans un tableau
-		procArray=($(ls ./processors/src/main/java/ | cut -f1 -d'.'))
-
-		#Pour chaque processeur de la liste:
-		for proc in ${procArray[@]}
-			do 
-				#On ajoute le processeur dans le pom.xml
-				sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$proc\2/" ./transformation-code/pom.xml
-
-				echo "Exécution des tests sur le code source avec les mutations réalisées par le processeur $proc..."
-				#On lance mvn clean test qui va se servir de spoon pour muter le code source fourni en paramètre du script
-				mvn test -pl transformation-code > "./Maven Logs/codeWith$proc.txt"
-				echo -e "OK\n"
-
-				#On exécute un script python pour lire le rapport XML des tests et l'inserer dans un .txt
-				./python/data.py $proc
-			done
-			
+		#Permet à l'utilisateur de choisir les processeurs à invoquer
+		./script/choice.sh 
+		
+		#Fin (peut etre faire tous les rm ici?)
 		./script/end.sh
 
 	else

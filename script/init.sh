@@ -1,3 +1,5 @@
+#! /bin/bash
+
 echo -e "Vous avez indiqué que le path de votre projet est le suivant : $1\n"
 echo "Nettoyage préalable..." #faire les vérifs nécessaires
 
