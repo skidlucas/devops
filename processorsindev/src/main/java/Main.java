@@ -4,6 +4,12 @@
  */
 public class Main {
 
+    static int pooo = 89;
+    static double popopop = 8.0;
+    static String mySty = "Je suis fou de kung fuuuu";
+    static boolean myBool = false;
+    static boolean mySecondBool = true;
+
     public int getInt(){
         int i = 0;
         int w , j = 0;
@@ -11,33 +17,16 @@ public class Main {
             System.out.println(" ");
             continue;
         }
-        i = 10;
+        j = 10 + 2;
+        int k = 10 - 2;
+        int l = 10 * 2;
+        int z = 10 / 2;
+        int x = 10 % 2;
+        //i--;
+        //i = - i;
         String str = new String();
-        while(i++ < 100)
-            continue;
-        return i = 10;
+        /*while(!(i++ < 100))
+            continue;*/
+        return k = 10;
     }
-
-    public int getIntMutated() {
-        int i = 0;
-        int w;
-        int j = 0;
-        {int Round100Loop = 0;
-            for (int b = 10 ;  ; ++i) {
-                java.lang.System.out.println(" ");
-                //continue;
-                if(Round100Loop++ == 100)break;
-            }
-        }//;
-        i = 10;
-        java.lang.String str = new java.lang.String();
-        {int Round100Loop = 0;
-            while ((i++) < 100) {
-                //continue;
-                if(Round100Loop++ == 100)break;
-            }
-        }//;
-        return i = 10;
-    }
-
 }

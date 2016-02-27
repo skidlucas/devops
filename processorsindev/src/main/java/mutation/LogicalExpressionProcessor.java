@@ -11,7 +11,7 @@ import spoon.reflect.declaration.CtVariable;
 /**
  * Created by lucas on 26/02/16.
  */
-public class LogicalExpressionMutator extends AbstractProcessor<CtElement> {
+public class LogicalExpressionProcessor extends AbstractProcessor<CtElement> {
     @Override
     public boolean isToBeProcessed(CtElement candidate) {
         return candidate instanceof CtBinaryOperator;

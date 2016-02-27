@@ -14,7 +14,6 @@ public class VariableNullProcessor extends AbstractProcessor<CtElement> {
         return candidate instanceof CtVariable;
     }
 
-    @Override
     public void process(CtElement candidate) {
         if (!(candidate instanceof CtVariable)) {
             return;

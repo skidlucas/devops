@@ -1,11 +1,9 @@
 import junit.framework.Assert;
-import mutation.*;
 import org.junit.Test;
 import spoon.Launcher;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.visitor.filter.NameFilter;
-
-import java.util.List;
+import mutation.*;
 
 /**
  * @author Lucas MARTINEZ
@@ -24,7 +22,7 @@ public class MainTest {
     public void testGenerateMutant(){
         String codeToBeMutated = "src/main/java/Main.java";
 
-       /* BinaryOperatorMutator mutationOperator = new BinaryOperatorMutator();
+       /* BinaryOperatorProcessor mutationOperator = new BinaryOperatorProcessor();
         OtherMutation mutationFreestyle = new OtherMutation();
         MutationTester<Main> mutationTester = new MutationTester<Main>(codeToBeMutated, mutationFreestyle);
 
@@ -33,7 +31,7 @@ public class MainTest {
         for(CtClass mut : mutants)
             System.out.println(mut.toString());*/
         Launcher l = new Launcher();
-        l.addProcessor(new LoopIterationProcessor());
+        l.addProcessor(new VariableConstProcessor());
         l.addInputResource(codeToBeMutated);
         l.run();
         CtClass c = (CtClass) l.getFactory().Package().getRootPackage().getElements(new NameFilter("Main")).get(0);
