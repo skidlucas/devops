@@ -22,7 +22,7 @@ if [ $# -eq 1 ]
 		#Permet à l'utilisateur de choisir les processeurs à invoquer
 		./script/choice.sh 
 		
-		#Fin (peut etre faire tous les rm ici?)
+		#Fin
 		./script/end.sh
 
 	else

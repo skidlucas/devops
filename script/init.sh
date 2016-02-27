@@ -24,9 +24,6 @@ sed -i "/$matchDep/r dependencies.txt" ./transformation-code/pom.xml
 sed -e '/<plugin>/,/<\/plugin>/!d' $1/pom.xml > ./script/plugins.txt
 sed -i "/$matchPlu/r plugins.txt" ./transformation-code/pom.xml
 
-#On supprime les fichiers temporaires
-rm ./script/dependencies.txt ./script/plugins.txt
-
 echo -e "OK\n"
 
 
