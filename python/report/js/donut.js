@@ -3,8 +3,9 @@ $(function () {
     var success = document.getElementById("success").value;
     var fail = document.getElementById("fail").value;
     var error = document.getElementById("error").value;
+    var stillborn = document.getElementById("stillborn").value;
 
-    var totalDead = parseInt(fail) + parseInt(error);
+    var totalDead = parseInt(fail) + parseInt(error) + parseInt(stillborn);
     //ajouter les morts nés après
 
     var colors = Highcharts.getOptions().colors,
@@ -14,8 +15,8 @@ $(function () {
             color: colors[8],
             drilldown: {
                 name: 'Cause',
-                categories: ['Erreur', 'Test fail', 'Mort né'],
-                data: [parseInt(error), parseInt(fail), 0],
+                categories: ['Erreur', 'Test fail', 'Mort-nés'],
+                data: [parseInt(error), parseInt(fail), parseInt(stillborn)],
                 color: colors[8]
             }
         }, {
