@@ -25,7 +25,7 @@ html.write('\t\t<img id="deadpoolRight" src="css/images/deadpool.jpg" width="300
 
 #init count.txt
 c = open('./python/count.txt', 'w')
-c.write('0.0.0')
+c.write('0.0.0.0')
 c.close()
 
 #clean data.txt

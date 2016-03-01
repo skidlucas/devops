@@ -70,7 +70,7 @@ QUESTIONS pour vendredi:
 - Ecrire les selectors dans le .java 
 0 Fusionner les deux poms
 0 Gérer un data.txt // fichier JS
-- supprimer le data.txt après le script
+0 supprimer le data.txt après le script
 - compter les mort-nés, (si y a pas le xml)
 0 mort-exécutés (error) et les fails (failure)
 - Faire des processeurs
