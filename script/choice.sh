@@ -16,7 +16,7 @@ select proc in "${choice[@]}"
 do
     case $proc in
         "Lancer le framework")
-            if [ ${#procChosen[@]} -eq 0 ]; then
+            if [ ${#procChosen[@]} -eq 0 ]; then #si la taille de procChosen est 0
                 echo "Aucun processeur choisi, veuillez en choisir un au minimum."
             else
                 echo -e "Lancement du framework de tests par mutation...\n"
@@ -30,12 +30,16 @@ do
             echo "Vous avez choisi tous les processeurs."
             procChosen=("${procArray[@]}")
             ;;
-        "$proc")
-            echo "Vous avez choisi $proc."
-            if [[ " ${procChosen[@]} " =~ " ${proc} " ]]; then
-                echo "Vous avez déjà choisi ce processeur."
+        $proc)
+            if [[ -z "$proc" ]]; then #vérifie que $proc n'est pas nul
+                echo "Option incorrecte."
             else
-                procChosen=("${procChosen[@]}" $proc)
+                echo "Vous avez choisi $proc."
+                if [[ " ${procChosen[@]} " =~ " ${proc} " ]]; then #vérifie que procChosen ne contient pas déjà proc
+                    echo "Vous avez déjà choisi ce processeur."
+                else
+                    procChosen=("${procChosen[@]}" $proc)
+                fi
             fi
             ;;
         *) echo 'Option incorrecte.';;
