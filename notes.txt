@@ -55,14 +55,6 @@ POUR VENDREDI:
 
 => TODO pour vendredi: ajouter un peu plus de présentation au html
 
-QUESTIONS pour vendredi:
-- comment fusionner 2 pom.xml ?
-- faire un mvn test dans transfo-code avec les dépendances de processors ?
-- trop de niveaux de lien symbolique à cause du chemin relatif ?
-- éviter le print sur la console?
-- utile de print les mutants fail?
-- afficher un graphique par mutation ou un général?
-- mutation orientée objet?
 
 => TODO : après premiere presentation
 0 Choix des processeurs (dans le script)
@@ -71,10 +63,17 @@ QUESTIONS pour vendredi:
 0 Fusionner les deux poms
 0 Gérer un data.txt // fichier JS
 0 supprimer le data.txt après le script
-- compter les mort-nés, (si y a pas le xml)
+0 compter les mort-nés, (si y a pas le xml)
 0 mort-exécutés (error) et les fails (failure)
 - Faire des processeurs
 0 camembert avec les errors
-- camembert avec les mort-nés (quand pierre aura fait le python)
+0 camembert avec les mort-nés (quand pierre aura fait le python)
 - pouvoir arreter le script completement
 - afficher quand une étape fail dans le shell et gérer le cas
+
+QUESTIONS pour vendredi 04/03:
+- trop de niveaux de lien symbolique à cause du chemin relatif ?
+- utile de print les mutants fail?
+- afficher un graphique par mutation ou un général?
+- appel du script à la fin d'un script ou script qui gère tout
+- 

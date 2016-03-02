@@ -31,3 +31,6 @@ echo "Compilation des processeurs..."
 mkdir -p "Maven Logs"
 mvn package -pl processors > "./Maven Logs/processors.txt"
 echo -e "OK\n"
+
+#Permet à l'utilisateur de choisir les processeurs à invoquer
+./script/choice.sh 

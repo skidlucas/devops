@@ -47,3 +47,6 @@ for proc in "${procChosen[@]}"
     do
         ./script/process.sh $proc
     done
+
+#Fin
+./script/end.sh
