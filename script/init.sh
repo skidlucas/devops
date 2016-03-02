@@ -10,12 +10,21 @@ echo -e "OK\n"
 
 echo "Création des liens symboliques..." #faire les vérifs nécessaires
 absolutePath=($(readlink -f $1))
-files=($(readlink -f $1/src/*))
-for file in "${files[@]}"
-    do
-        ln -sv $file ./transformation-code/src/
-    done
-echo -e "OK\n"
+
+if ls $absolutePath/src &>/dev/null
+	then
+	    files=($absolutePath/src/*)
+		for file in "${files[@]}"
+		    do
+		        ln -sv $file ./transformation-code/src/
+		    done
+		echo -e "OK\n"
+	else
+	    echo "Le chemin indiqué ne contient pas de sous-dossier src/"
+	    exit 1
+fi
+
+
 
 
 #On fusionne les deux pom.xml en important les dépendances et les plugins du src à muter
