@@ -1,5 +1,7 @@
 #! /bin/bash
 
+#On init le .html
+./python/initHTML.py
 #On insére notre .txt contenant le rapport dans notre .html
 ./python/dataHTML.py
 #On termine le .html
@@ -7,7 +9,8 @@
 
 #On supprime les fichiers temporaires
 rm ./script/dependencies.txt ./script/plugins.txt
-rm ./python/report/data.txt
+#rm ./python/report/data.txt
+#rm ./python/count.txt
 
 echo -e "Exécution du framework terminée.\n"
 echo -e "Si vous souhaitez consulter les logs de Maven, ils sont disponibles dans le dossier Maven Logs."

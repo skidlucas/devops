@@ -31,6 +31,3 @@ echo "Compilation des processeurs..."
 mkdir -p "Maven Logs"
 mvn package -pl processors > "./Maven Logs/processors.txt"
 echo -e "OK\n"
-
-#On init le .html
-./python/initHTML.py

@@ -18,7 +18,7 @@ for lineC in cRead :
 	n = double[3] # nombre de mutant mort-né
 
 html.write('\n\t\t<input id="fail" style="display: none" value="' + d + '">\n')
-html.write('\n\t\t<input id="error" style="display: none" value="' + t + '">\n')
+html.write('\t\t<input id="error" style="display: none" value="' + t + '">\n')
 html.write('\t\t<input id="success" style="display: none" value="' + a + '">\n')
 html.write('\t\t<input id="stillborn" style="display: none" value="' + n + '">\n')
 html.write('\t\t<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>\n')

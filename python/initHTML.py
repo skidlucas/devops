@@ -21,12 +21,3 @@ html.write('\t\t<h1>Rapport sur la guerre des mutants</h1>\n')
 html.write('\t\t<h3>réalisé par Lucas Martinez, Simon Paris et Lucas Soumille</h3><br />\n')
 html.write('\t\t<img id="deadpoolLeft" src="css/images/deadpool.jpg" width="300" height="200"class="img-responsive img-circle">\n')
 html.write('\t\t<img id="deadpoolRight" src="css/images/deadpool.jpg" width="300" height="200"class="img-responsive img-circle">\n')
-		
-
-#init count.txt
-c = open('./python/count.txt', 'w')
-c.write('0.0.0.0')
-c.close()
-
-#clean data.txt
-open('./python/report/data.txt', 'w').close()

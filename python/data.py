@@ -5,6 +5,17 @@ import os
 from os import listdir
 from os.path import isfile, join
 
+
+#init count.txt
+c = open('./python/count.txt', 'w')
+c.write('0.0.0.0')
+c.close()
+
+#clean data.txt
+open('./python/report/data.txt', 'w').close()
+
+
+
 data = open('./python/report/data.txt', 'a')
 
 testpath = './transformation-code/src/test/java/'
