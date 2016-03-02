@@ -18,12 +18,6 @@ if [ $# -eq 1 ]
 	then
 		#Initialisation
 		./script/init.sh $1
-	
-		#Permet à l'utilisateur de choisir les processeurs à invoquer
-		./script/choice.sh 
-		
-		#Fin
-		./script/end.sh
 
 	else
 		echo "ERREUR: trop d'argument, veuillez indiquer uniquement le chemin absolu de votre code à muter en paramètre."
