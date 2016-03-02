@@ -5,12 +5,14 @@ PS3='Choix: '
 echo -e 'Choisissez le(s) processeur(s) que vous souhaitez utiliser: \n'
 #On parcourt la liste des processeurs et on les ajoute dans un tableau
 procArray=($(ls ./processors/src/main/java/*Processor.java | xargs -n1 basename | cut -f1 -d'.'))
-procArray=("${procArray[@]}" "Lancer le framework")
-procArray=("${procArray[@]}" "Quitter")
+choice=("${procArray[@]}")
+choice=("${choice[@]}" "Tous les processeurs")
+choice=("${choice[@]}" "Lancer le framework")
+choice=("${choice[@]}" "Quitter")
 
 procChosen=()
 
-select proc in "${procArray[@]}"
+select proc in "${choice[@]}"
 do
     case $proc in
         "Lancer le framework")
@@ -23,6 +25,10 @@ do
             ;;
         "Quitter")
             exit 1
+            ;;
+        "Tous les processeurs")
+            echo "Vous avez choisi tous les processeurs."
+            procChosen=("${procArray[@]}")
             ;;
         "$proc")
             echo "Vous avez choisi $proc."

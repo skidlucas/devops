@@ -15,11 +15,11 @@ state = 1 # etat du mutant
 data.write('proc ' + sys.argv[1] + '\n')
 for elt in testfiles:
 	test = os.path.splitext(elt)[0]
-	testreport = './transformation-code/target/surefire-reports/TEST-' + test + '.xmll'
+	testreport = './transformation-code/target/surefire-reports/TEST-' + test + '.xml'
 	try:
 		xml = open(testreport, 'r')
 	except IOError:
-		print('ERROR ' + testreport + " cannot open (doesn't exist?)")
+		print("ERROR can't open " + testreport + " (doesn't exist?)")
 		state = 2 # mon mutant est mort-né
 	else:
 		for line in xml:
