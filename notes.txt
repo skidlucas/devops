@@ -76,4 +76,5 @@ QUESTIONS pour vendredi 04/03:
 - utile de print les mutants fail?
 - afficher un graphique par mutation ou un général?
 - appel du script à la fin d'un script ou script qui gère tout
-- 
+- est ce qu'il doit marcher sur windows,mac, etc...
+- critères des projets pour qu'ils soient testables par notre framework

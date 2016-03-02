@@ -9,7 +9,12 @@ cp ./pomTransfoDefault.xml ./transformation-code/pom.xml #On copie le pom qui pr
 echo -e "OK\n"
 
 echo "Création des liens symboliques..." #faire les vérifs nécessaires
-ln -sv $1/src/* ./transformation-code/src/
+absolutePath=($(readlink -f $1))
+files=($(readlink -f $1/src/*))
+for file in "${files[@]}"
+    do
+        ln -sv $file ./transformation-code/src/
+    done
 echo -e "OK\n"
 
 
@@ -18,10 +23,10 @@ echo "Importation des dépendances et des plugins du projet à muter..."
 matchDep='<dependencies>'
 matchPlu='<plugins>'
 
-sed -e '/<dependency>/,/<\/dependency>/!d' $1/pom.xml > ./script/dependencies.txt
+sed -e '/<dependency>/,/<\/dependency>/!d' $absolutePath/pom.xml > ./script/dependencies.txt
 sed -i "/$matchDep/r dependencies.txt" ./transformation-code/pom.xml
 
-sed -e '/<plugin>/,/<\/plugin>/!d' $1/pom.xml > ./script/plugins.txt
+sed -e '/<plugin>/,/<\/plugin>/!d' $absolutePath/pom.xml > ./script/plugins.txt
 sed -i "/$matchPlu/r plugins.txt" ./transformation-code/pom.xml
 
 echo -e "OK\n"
