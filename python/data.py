@@ -15,7 +15,7 @@ state = 1 # etat du mutant
 data.write('proc ' + sys.argv[1] + '\n')
 for elt in testfiles:
 	test = os.path.splitext(elt)[0]
-	testreport = './transformation-code/target/surefire-reports/TEST-' + test + '.xml'
+	testreport = './transformation-code/target/surefire-reports/TEST-' + test + '.xmll'
 	try:
 		xml = open(testreport, 'r')
 	except IOError:

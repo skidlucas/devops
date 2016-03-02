@@ -20,13 +20,11 @@ for line in dataTXT:
 	else :
 		split = line.split('.')
 		if split[0] == 'junit' :
-			print('caca fail')
 			html.write('\t\t\t<div class="fail">')
 			html.write(line)
 			html.write('</div>')
 			html.write('\n')
 		elif split[0] == 'java' :
-			print('caca error')
 			html.write('\t\t\t<div class="error">')
 			html.write(line)
 			html.write('</div>')
