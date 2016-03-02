@@ -33,10 +33,10 @@ matchDep='<dependencies>'
 matchPlu='<plugins>'
 
 sed -e '/<dependency>/,/<\/dependency>/!d' $absolutePath/pom.xml > ./script/dependencies.txt
-sed -i "/$matchDep/r dependencies.txt" ./transformation-code/pom.xml
+sed -i "/$matchDep/r ./script/dependencies.txt" ./transformation-code/pom.xml
 
 sed -e '/<plugin>/,/<\/plugin>/!d' $absolutePath/pom.xml > ./script/plugins.txt
-sed -i "/$matchPlu/r plugins.txt" ./transformation-code/pom.xml
+sed -i "/$matchPlu/r ./script/plugins.txt" ./transformation-code/pom.xml
 
 echo -e "OK\n"
 
