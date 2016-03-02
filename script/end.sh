@@ -1,7 +1,5 @@
 #! /bin/bash
 
-#On init le .html
-./python/initHTML.py
 #On insére notre .txt contenant le rapport dans notre .html
 ./python/dataHTML.py
 #On termine le .html

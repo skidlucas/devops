@@ -42,6 +42,8 @@ do
     esac
 done
 
+#On init le .html
+./python/initHTML.py
 
 for proc in "${procChosen[@]}"
     do
