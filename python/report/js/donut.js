@@ -12,20 +12,20 @@ $(function () {
         categories = ['Mutants morts', 'Mutants vivants'],
         data = [{
             y: totalDead,
-            color: colors[8],
+            color: colors[2],
             drilldown: {
                 name: 'Cause',
                 categories: ['Erreur', 'Test fail', 'Mort-nés'],
                 data: [parseInt(error), parseInt(fail), parseInt(stillborn)],
-                color: colors[8]
+                color: colors[2]
             }
         }, {
             y: parseInt(success),
-            color: colors[2],
+            color: colors[8],
             drilldown: {
                 categories: ['Mutants vivants'],
                 data: [parseInt(success)],
-                color: colors[2]
+                color: colors[8]
             }
         }],
         mutantData = [],
