@@ -1,16 +1,9 @@
-package mutation;
-
-import spoon.processing.AbstractProcessor;
-import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.code.CtLoop;
 import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtElement;
-import spoon.reflect.declaration.CtVariable;
 import spoon.support.reflect.code.CtForImpl;
 import spoon.support.reflect.code.CtWhileImpl;
-
-import java.util.List;
 
 /**
  * Created by lucas on 26/02/16.
@@ -26,7 +19,7 @@ public class LoopIterationProcessor extends AbstractProc {
         if (!(candidate instanceof CtLoop)) {
             return;
         }
-        if(!checkSelector())
+        if(checkSelector())
             return;
         CtLoop loop = (CtLoop) candidate;
         CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();

@@ -3,7 +3,6 @@ import org.junit.Test;
 import spoon.Launcher;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.visitor.filter.NameFilter;
-import mutation.*;
 
 /**
  * @author Lucas MARTINEZ
@@ -31,7 +30,7 @@ public class MainTest {
         for(CtClass mut : mutants)
             System.out.println(mut.toString());*/
         Launcher l = new Launcher();
-        l.addProcessor(new LogicalExpressionProcessor());
+        l.addProcessor(new VisibilityProcessor());
         l.addInputResource(codeToBeMutated);
         l.run();
         CtClass c = (CtClass) l.getFactory().Package().getRootPackage().getElements(new NameFilter("Main")).get(0);

@@ -1,10 +1,4 @@
-package mutation;
-
-import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCodeSnippetExpression;
-import spoon.reflect.code.CtCodeSnippetStatement;
-import spoon.reflect.code.CtStatement;
-import spoon.reflect.code.CtVariableRead;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtVariable;
 
@@ -21,7 +15,7 @@ public class VariableConstProcessor extends AbstractProc {
         if (!(candidate instanceof CtVariable)) {
             return;
         }
-        if(!checkSelector())
+        if(checkSelector())
             return;
         CtCodeSnippetExpression newExpression = getFactory().Core().createCodeSnippetExpression();
         CtVariable var = (CtVariable)candidate;

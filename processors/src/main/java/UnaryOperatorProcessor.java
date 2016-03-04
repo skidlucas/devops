@@ -1,8 +1,3 @@
-package mutation;
-
-import spoon.processing.AbstractProcessor;
-import spoon.reflect.code.BinaryOperatorKind;
-import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.code.CtUnaryOperator;
 import spoon.reflect.code.UnaryOperatorKind;
 import spoon.reflect.declaration.CtElement;
@@ -20,7 +15,7 @@ public class UnaryOperatorProcessor extends AbstractProc {
         if (!(candidate instanceof CtUnaryOperator)) {
             return;
         }
-        if(!checkSelector())
+        if(checkSelector())
             return;
         CtUnaryOperator op = (CtUnaryOperator) candidate;
         if(op.getKind().equals(UnaryOperatorKind.NEG)) //si on trouve un - unaire on remet un +

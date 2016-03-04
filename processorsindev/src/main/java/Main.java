@@ -4,7 +4,7 @@
  */
 public class Main {
 
-    static int pooo = 89;
+    private static int pooo = 89;
     static double popopop = 8.0;
     static String mySty = "Je suis fou de kung fuuuu";
     static boolean myBool = false;

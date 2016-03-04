@@ -1,7 +1,4 @@
-package processorsindev;
-
 import mutation.AbstractProc;
-import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.*;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtVariable;
@@ -19,7 +16,7 @@ public class VariableNullProcessor extends AbstractProc {
         if (!(candidate instanceof CtVariable)) {
             return;
         }
-        if(!checkSelector())
+        if(checkSelector())
             return;
         CtStatement state = (CtStatement) candidate;
         CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
@@ -27,6 +24,5 @@ public class VariableNullProcessor extends AbstractProc {
         String newDeclare = str[0] + "= null";
         newStatement.setValue(newDeclare);
         state.replace(newStatement);
-
     }
 }

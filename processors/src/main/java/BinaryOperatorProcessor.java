@@ -1,6 +1,3 @@
-package mutation;
-
-import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.declaration.CtElement;
@@ -15,7 +12,7 @@ public class BinaryOperatorProcessor extends AbstractProc {
 		if (!(candidate instanceof CtBinaryOperator)) {
 			return;
 		}
-		if(!checkSelector())
+		if(checkSelector())
 			return;
 		CtBinaryOperator op = (CtBinaryOperator)candidate;
 		if(op.getKind().equals(BinaryOperatorKind.PLUS))// si c'est un + on met un -
