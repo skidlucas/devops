@@ -18,6 +18,8 @@ public class VisibilityProcessor extends AbstractProc{
         if (!(candidate instanceof CtMethod)) {
             return;
         }
+        if(checkSelector())
+            return;
         CtMethod method = (CtMethod) candidate;
         Set<ModifierKind> allModifier = method.getModifiers();
         Iterator i = allModifier.iterator();

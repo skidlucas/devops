@@ -1,4 +1,4 @@
-import mutation.AbstractProc;
+
 import spoon.reflect.code.*;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtVariable;
@@ -12,6 +12,7 @@ public class VariableNullProcessor extends AbstractProc {
         return candidate instanceof CtVariable;
     }
 
+    @Override
     public void process(CtElement candidate) {
         if (!(candidate instanceof CtVariable)) {
             return;

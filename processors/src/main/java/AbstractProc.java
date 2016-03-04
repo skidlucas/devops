@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public abstract class AbstractProc extends AbstractProcessor<CtElement> {
 
-    private static final int K_LIKELIHOOD = 101;
+    private static final int K_LIKELIHOOD = 100;
     private Random rand;
 
     /**
@@ -19,6 +19,6 @@ public abstract class AbstractProc extends AbstractProcessor<CtElement> {
      */
     protected boolean checkSelector(){
         rand = new Random();
-        return (K_LIKELIHOOD < rand.nextInt(100));
+        return (K_LIKELIHOOD < rand.nextInt(101));
     }
 }
