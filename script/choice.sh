@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PS3='Choix du processeur: '
+PS3='Choix: '
 
 echo -e 'Choisissez le(s) processeur(s) que vous souhaitez utiliser: \n'
 #On parcourt la liste des processeurs et on les ajoute dans un tableau
