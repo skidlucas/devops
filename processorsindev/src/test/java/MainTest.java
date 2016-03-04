@@ -31,7 +31,7 @@ public class MainTest {
         for(CtClass mut : mutants)
             System.out.println(mut.toString());*/
         Launcher l = new Launcher();
-        l.addProcessor(new VariableConstProcessor());
+        l.addProcessor(new LogicalExpressionProcessor());
         l.addInputResource(codeToBeMutated);
         l.run();
         CtClass c = (CtClass) l.getFactory().Package().getRootPackage().getElements(new NameFilter("Main")).get(0);

@@ -11,7 +11,7 @@ import spoon.reflect.declaration.CtVariable;
 /**
  * Created by lucas on 27/02/16.
  */
-public class VariableConstProcessor extends AbstractProcessor<CtElement> {
+public class VariableConstProcessor extends AbstractProc {
     @Override
     public boolean isToBeProcessed(CtElement candidate) {
         return candidate instanceof CtVariable;
@@ -21,6 +21,8 @@ public class VariableConstProcessor extends AbstractProcessor<CtElement> {
         if (!(candidate instanceof CtVariable)) {
             return;
         }
+        if(!checkSelector())
+            return;
         CtCodeSnippetExpression newExpression = getFactory().Core().createCodeSnippetExpression();
         CtVariable var = (CtVariable)candidate;
         if(var.getModifiers().toString().contains("static")){

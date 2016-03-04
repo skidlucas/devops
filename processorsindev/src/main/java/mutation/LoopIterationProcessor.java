@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by lucas on 26/02/16.
  */
-public class LoopIterationProcessor extends AbstractProcessor<CtElement> {
+public class LoopIterationProcessor extends AbstractProc {
 
     @Override
     public boolean isToBeProcessed(CtElement candidate) {
@@ -26,6 +26,8 @@ public class LoopIterationProcessor extends AbstractProcessor<CtElement> {
         if (!(candidate instanceof CtLoop)) {
             return;
         }
+        if(!checkSelector())
+            return;
         CtLoop loop = (CtLoop) candidate;
         CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
         CtCodeSnippetStatement newDeclare = getFactory().Core().createCodeSnippetStatement();

@@ -5,7 +5,7 @@ import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.declaration.CtElement;
 
-public class BinaryOperatorProcessor extends AbstractProcessor<CtElement> {
+public class BinaryOperatorProcessor extends AbstractProc {
 	@Override
 	public boolean isToBeProcessed(CtElement candidate) {
 		return candidate instanceof CtBinaryOperator;
@@ -15,6 +15,8 @@ public class BinaryOperatorProcessor extends AbstractProcessor<CtElement> {
 		if (!(candidate instanceof CtBinaryOperator)) {
 			return;
 		}
+		if(!checkSelector())
+			return;
 		CtBinaryOperator op = (CtBinaryOperator)candidate;
 		if(op.getKind().equals(BinaryOperatorKind.PLUS))// si c'est un + on met un -
 			op.setKind(BinaryOperatorKind.MINUS);

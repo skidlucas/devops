@@ -10,7 +10,7 @@ import spoon.reflect.declaration.CtElement;
 /**
  * Created by lucas on 27/02/16.
  */
-public class UnaryOperatorProcessor  extends AbstractProcessor<CtElement> {
+public class UnaryOperatorProcessor extends AbstractProc {
     @Override
     public boolean isToBeProcessed(CtElement candidate) {
         return candidate instanceof CtUnaryOperator;
@@ -20,6 +20,8 @@ public class UnaryOperatorProcessor  extends AbstractProcessor<CtElement> {
         if (!(candidate instanceof CtUnaryOperator)) {
             return;
         }
+        if(!checkSelector())
+            return;
         CtUnaryOperator op = (CtUnaryOperator) candidate;
         if(op.getKind().equals(UnaryOperatorKind.NEG)) //si on trouve un - unaire on remet un +
             op.setKind(UnaryOperatorKind.POS);
