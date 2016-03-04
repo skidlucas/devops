@@ -9,7 +9,8 @@ cp ./pomTransfoDefault.xml ./transformation-code/pom.xml #On copie le pom qui pr
 echo -e "OK\n"
 
 echo "Création des liens symboliques..." #faire les vérifs nécessaires
-absolutePath=($(readlink -f $1))
+#absolutePath=($(readlink -f $1)) #NE MARCHE PAS SUR MAC
+absolutePath=($(cd $1 && pwd -P))
 
 if ls $absolutePath/src &>/dev/null
 	then

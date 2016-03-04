@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public abstract class AbstractProc extends AbstractProcessor<CtElement> {
 
-    private static final int K_LIKELIHOOD = 100;
+    private static final int K_LIKELIHOOD = 1;
     private Random rand;
 
     /**

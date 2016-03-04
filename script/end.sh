@@ -6,7 +6,7 @@
 ./python/endHTML.py
 
 #On supprime les fichiers temporaires
-rm ./script/dependencies.txt ./script/plugins.txt
+rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt
 rm ./python/report/data.txt
 rm ./python/count.txt
 

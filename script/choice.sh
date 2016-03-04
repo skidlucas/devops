@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PS3='Choix: '
+PS3='Choix du processeur: '
 
 echo -e 'Choisissez le(s) processeur(s) que vous souhaitez utiliser: \n'
 #On parcourt la liste des processeurs et on les ajoute dans un tableau
@@ -11,6 +11,7 @@ choice=("${choice[@]}" "Lancer le framework")
 choice=("${choice[@]}" "Quitter")
 
 procChosen=()
+selectorChosen=()
 
 select proc in "${choice[@]}"
 do
@@ -24,12 +25,21 @@ do
             fi
             ;;
         "Quitter")
-            rm ./script/dependencies.txt ./script/plugins.txt
+            rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt
             exit 1
             ;;
         "Tous les processeurs")
             echo "Vous avez choisi tous les processeurs."
             procChosen=("${procArray[@]}")
+            
+            #Meme sélecteur pour tous les processeurs
+            selectorChosen=()
+            ./script/selector.sh
+            selector=($(cat ./script/selector.txt))
+            for ((i=0;i<${#procChosen[@]};i++)); 
+                do
+                    selectorChosen=("${selectorChosen[@]}" $selector)
+                done
             ;;
         $proc)
             if [[ -z "$proc" ]]; then #vérifie que $proc n'est pas nul
@@ -40,6 +50,11 @@ do
                     echo "Vous avez déjà choisi ce processeur."
                 else
                     procChosen=("${procChosen[@]}" $proc)
+
+                    #On choisit les sélecteurs (pourcentage)
+                    ./script/selector.sh
+                    selector=($(cat ./script/selector.txt))
+                    selectorChosen=("${selectorChosen[@]}" $selector)
                 fi
             fi
             ;;
@@ -50,9 +65,9 @@ done
 #On init le .html
 ./python/initHTML.py
 
-for proc in "${procChosen[@]}"
+for ((i=0;i<${#procChosen[@]};i++)); 
     do
-        ./script/process.sh $proc
+        ./script/process.sh "${procChosen[i]}" "${selectorChosen[i]}"
     done
 
 #Fin

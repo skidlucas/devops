@@ -72,9 +72,9 @@ POUR VENDREDI:
 - afficher quand une étape fail dans le shell et gérer le cas
 
 QUESTIONS pour vendredi 04/03:
-- trop de niveaux de lien symbolique à cause du chemin relatif ?
-- utile de print les mutants fail?
-- afficher un graphique par mutation ou un général?
-- appel du script à la fin d'un script ou script qui gère tout
-- est ce qu'il doit marcher sur windows,mac, etc...
-- critères des projets pour qu'ils soient testables par notre framework
+
+
+TODO RENDU:
+- afficher les probabilités choisies pour chaque proc sur le html (modifier le python)
+- afficher un graphique par mutation ou un général? => à réfléchir
+- IL FAUT spécifier les critères des projets pour qu'ils soient testables par notre framework
