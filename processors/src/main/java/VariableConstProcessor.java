@@ -28,6 +28,10 @@ public class VariableConstProcessor extends AbstractProc {
                 newExpression.setValue("\"JE SUIS UN MUTANT\"");
             else if(var.getType().toString().contains("boolean"))
                 newExpression.setValue("true");
+            else {
+                newExpression.setValue(var.getDefaultExpression().toString());
+                System.out.println(newExpression);
+            }
             var.setDefaultExpression(newExpression);
         }
 

@@ -1,8 +1,6 @@
-import spoon.reflect.code.CtCodeSnippetExpression;
-import spoon.reflect.code.CtCodeSnippetStatement;
-import spoon.reflect.code.CtLoop;
-import spoon.reflect.code.CtStatement;
+import spoon.reflect.code.*;
 import spoon.reflect.declaration.CtElement;
+import spoon.support.reflect.code.CtForEachImpl;
 import spoon.support.reflect.code.CtForImpl;
 import spoon.support.reflect.code.CtWhileImpl;
 
@@ -17,7 +15,7 @@ public class LoopIterationProcessor extends AbstractProc {
     }
 
     public void process(CtElement candidate) {
-        if (!(candidate instanceof CtLoop)) {
+        if (!(candidate instanceof CtLoop) || candidate instanceof CtForEachImpl) {
             return;
         }
         if(checkSelector())
@@ -35,14 +33,18 @@ public class LoopIterationProcessor extends AbstractProc {
             newExpr.setValue("");
             forLoop.setExpression(newExpr);//je supprime la condition
         } else if (loop instanceof CtWhileImpl){
+            CtCodeSnippetExpression newExpr = getFactory().Core().createCodeSnippetExpression();
+            newExpr.setValue("");
             CtWhileImpl whileLoop = (CtWhileImpl) loop;
-            whileLoop.getLoopingExpression();//je supprime la condition
+            whileLoop.setLoopingExpression(newExpr);//je supprime la condition
         }
         newStatement.setValue("if(Round100Loop++ == 100)" +
                 "break");
-        body.insertAfter(newStatement);
+        CtStatementList listInstInBoy = (CtStatementList) body;
+        listInstInBoy.addStatement(newStatement);
         endLoop.setValue("}//");
         loop.insertAfter(endLoop);
+
     }
 }
 

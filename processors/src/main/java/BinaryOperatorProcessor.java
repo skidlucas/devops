@@ -1,20 +1,21 @@
 import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.declaration.CtElement;
+import spoon.support.reflect.code.CtBinaryOperatorImpl;
 
 public class BinaryOperatorProcessor extends AbstractProc {
 	@Override
 	public boolean isToBeProcessed(CtElement candidate) {
-		return candidate instanceof CtBinaryOperator;
+		return candidate instanceof CtBinaryOperatorImpl;
 	}
 
 	public void process(CtElement candidate) {
-		if (!(candidate instanceof CtBinaryOperator)) {
+		if (!(candidate instanceof CtBinaryOperatorImpl)) {
 			return;
 		}
 		if(checkSelector())
 			return;
-		CtBinaryOperator op = (CtBinaryOperator)candidate;
+		CtBinaryOperatorImpl op = (CtBinaryOperatorImpl) candidate;
 		if(op.getKind().equals(BinaryOperatorKind.PLUS))// si c'est un + on met un -
 			op.setKind(BinaryOperatorKind.MINUS);
 		else if(op.getKind().equals(BinaryOperatorKind.MINUS))// si c'est un - on met un +
