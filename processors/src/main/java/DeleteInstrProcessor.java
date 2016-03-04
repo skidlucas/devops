@@ -1,3 +1,4 @@
+import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtElement;
 
@@ -20,8 +21,12 @@ public class DeleteInstrProcessor extends AbstractProc {
             return;
         }
         CtStatement state = (CtStatement) candidate;
-        if(checkSelector() && !isToBeDeleted())
-            state.replace(null);
+        if(checkSelector() && !isToBeDeleted()){
+            CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
+            String tmp = "";
+            newStatement.setValue(tmp);
+            state.replace(newStatement);
+        }
     }
 
     private boolean isToBeDeleted(){

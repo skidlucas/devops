@@ -25,7 +25,7 @@ do
             fi
             ;;
         "Quitter")
-            rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt
+            rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt ./script/repositories.txt
             exit 1
             ;;
         "Tous les processeurs")

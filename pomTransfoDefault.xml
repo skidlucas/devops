@@ -11,6 +11,9 @@
 
     <artifactId>transformation-code</artifactId>
 
+    <repositories>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>polytech.unice.devops</groupId>

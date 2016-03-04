@@ -79,3 +79,4 @@ TODO RENDU:
 - simon tu dois vérifier le point au dessus parce que je suis pas sur de ce que j'ai fait
 - afficher un graphique par mutation ou un général? => à réfléchir
 - IL FAUT spécifier les critères des projets pour qu'ils soient testables par notre framework
+- Verifier deleteInstruction, loopIteration, variableNull

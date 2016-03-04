@@ -1,3 +1,4 @@
+import spoon.reflect.code.CtCodeSnippetExpression;
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.code.CtLoop;
 import spoon.reflect.code.CtStatement;
@@ -30,7 +31,9 @@ public class LoopIterationProcessor extends AbstractProc {
         loop.insertBefore(newDeclare);
         if(loop instanceof CtForImpl){
             CtForImpl forLoop = (CtForImpl) loop;
-            forLoop.setExpression(null);//je supprime la condition
+            CtCodeSnippetExpression newExpr = getFactory().Core().createCodeSnippetExpression();
+            newExpr.setValue("");
+            forLoop.setExpression(newExpr);//je supprime la condition
         } else if (loop instanceof CtWhileImpl){
             CtWhileImpl whileLoop = (CtWhileImpl) loop;
             whileLoop.getLoopingExpression();//je supprime la condition
@@ -40,16 +43,6 @@ public class LoopIterationProcessor extends AbstractProc {
         body.insertAfter(newStatement);
         endLoop.setValue("}//");
         loop.insertAfter(endLoop);
-
-
-/*
-    CtStatement state = (CtStatement) candidate;
-    CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
-    String[] str = state.toString().split("=");
-    String newDeclare = str[0] + "= null";
-    newStatement.setValue(newDeclare);
-    state.replace(newStatement);
-*/
     }
 }
 

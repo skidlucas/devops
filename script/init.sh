@@ -32,12 +32,16 @@ fi
 echo "Importation des dépendances et des plugins du projet à muter..."
 matchDep='<dependencies>'
 matchPlu='<plugins>'
+matchRep='<repositories>'
 
 sed -e '/<dependency>/,/<\/dependency>/!d' $absolutePath/pom.xml > ./script/dependencies.txt
 sed -i "/$matchDep/r ./script/dependencies.txt" ./transformation-code/pom.xml
 
 sed -e '/<plugin>/,/<\/plugin>/!d' $absolutePath/pom.xml > ./script/plugins.txt
 sed -i "/$matchPlu/r ./script/plugins.txt" ./transformation-code/pom.xml
+
+sed -e '/<repository>/,/<\/repository>/!d' $absolutePath/pom.xml > ./script/repositories.txt
+sed -i "/$matchRep/r ./script/repositories.txt" ./transformation-code/pom.xml
 
 echo -e "OK\n"
 
