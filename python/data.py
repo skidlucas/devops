@@ -14,6 +14,7 @@ testfiles = [f for f in listdir(testpath) if isfile(join(testpath, f))]
 state = 1 # etat du mutant
 
 data.write('proc ' + sys.argv[1] + '\n')
+data.write('selec ' + sys.argv[2] + '\n')
 for elt in testfiles:
 	test = os.path.splitext(elt)[0]
 	testreport = './transformation-code/target/surefire-reports/TEST-' + test + '.xml'

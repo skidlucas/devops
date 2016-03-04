@@ -10,6 +10,10 @@ for line in dataTXT:
 	if split[0] == 'proc' :
 		html.write('\t\t<br />\n\t\t<div class="processor">Processeur utilisé: ' )
 		html.write('<span class="processorName">' + split[1] + '</span>')
+		#html.write('</div>\n')
+		#html.write('\t\t<div class="resultsPerProc">\n')
+	elif split[0] == 'selec' :
+		html.write(' à <span class="selectorProb">' + split[1] + '</span>%')
 		html.write('</div>\n')
 		html.write('\t\t<div class="resultsPerProc">\n')
 	elif split[0] == 'testcase' :
