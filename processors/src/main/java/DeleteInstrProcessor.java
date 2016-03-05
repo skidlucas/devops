@@ -1,6 +1,7 @@
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtElement;
+import spoon.support.reflect.code.CtBinaryOperatorImpl;
 
 import java.util.Random;
 
@@ -17,7 +18,7 @@ public class DeleteInstrProcessor extends AbstractProc {
     }
 
     public void process(CtElement candidate) {
-        if (!(candidate instanceof CtStatement)) {
+        if (!(candidate instanceof CtStatement) || candidate instanceof CtBinaryOperatorImpl) {
             return;
         }
         CtStatement state = (CtStatement) candidate;

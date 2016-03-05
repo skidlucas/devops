@@ -38,6 +38,5 @@ public class VariableNullProcessor extends AbstractProc {
         String newDeclare = "null";
         newStatement.setValue(newDeclare);
         state.setAssignment(newStatement);
-        System.out.println(state);
     }
 }
