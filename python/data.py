@@ -23,23 +23,24 @@ for elt in testfiles:
 	except IOError:
 		print("ERROR can't open " + testreport + " (doesn't exist?)")
 		state = 2 # mon mutant est mort-né
+		os.system('./python/diffTxt.sh' + ' ' + sys.argv[1])
 	else:
 		for line in xml:
 			clashSpace = line.strip()
 			split = clashSpace.split(' ')
 			if split[0] == '<testcase' :
-				res = ' '.join(split).strip('></')
-				data.write(res + '\n')
+				#res = ' '.join(split).strip('></')
+				#data.write(res + '\n')
 				# mon mutant peut survivre
 				state = 1
 			if split[0] == '<failure' :
-				res = line.split('>')
-				data.write(res[1])
+				#res = line.split('>')
+				#data.write(res[1])
 				# mon mutant a été tué par un test
 				state = 0
 			if split[0] == '<error' :
-				res = line.split('>')
-				data.write(res[1])
+				#res = line.split('>')
+				#data.write(res[1])
 				# mon mutant a fait echouer un test
 				state = -1
 		xml.close()
