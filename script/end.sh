@@ -8,7 +8,9 @@
 #On supprime les fichiers temporaires
 rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt ./script/repositories.txt
 rm ./python/report/data.txt
+#rm ./python/report/logMutation.txt
 rm ./python/count.txt
+
 
 echo -e "Exécution du framework terminée.\n"
 echo -e "Si vous souhaitez consulter les logs de Maven, ils sont disponibles dans le dossier Maven Logs."
