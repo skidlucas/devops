@@ -28,6 +28,7 @@ public class VisibilityProcessor extends AbstractProc{
                 i.remove();
             }
         }
+        super.printLogMutation(method.getPosition().toString());
     }
 
 }

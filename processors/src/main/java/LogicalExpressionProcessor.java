@@ -31,6 +31,6 @@ public class LogicalExpressionProcessor extends AbstractProc {
             op.setKind(BinaryOperatorKind.LT);//<
         else if (op.getKind().equals(BinaryOperatorKind.LT))//>
             op.setKind(BinaryOperatorKind.LE);//=>
-
+        super.printLogMutation(op.getPosition().toString());
     }
 }

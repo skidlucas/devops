@@ -22,10 +22,12 @@ public class DeleteInstrProcessor extends AbstractProc {
             return;
         }
         CtStatement state = (CtStatement) candidate;
-        if(checkSelector() && !isToBeDeleted()){
+        if(!checkSelector() && !isToBeDeleted()){
+            System.out.println("debut suppresion");
             CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
             newStatement.setValue("");
             state.replace(newStatement);
+            super.printLogMutation(state.getPosition().toString());
         }
     }
 

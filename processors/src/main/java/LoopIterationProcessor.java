@@ -45,6 +45,7 @@ public class LoopIterationProcessor extends AbstractProc {
         listInstInBoy.addStatement(newStatement);
         endLoop.setValue("}//");
         loop.insertAfter(endLoop);
+        super.printLogMutation(loop.getPosition().toString());
     }
 }
 

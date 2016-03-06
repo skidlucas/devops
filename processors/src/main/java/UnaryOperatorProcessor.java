@@ -24,6 +24,6 @@ public class UnaryOperatorProcessor extends AbstractProc {
             op.setKind(UnaryOperatorKind.POSTINC);
         else if(op.getKind().equals(UnaryOperatorKind.PREINC) || op.getKind().equals(UnaryOperatorKind.POSTINC)) //si on a un ++ on met --
             op.setKind(UnaryOperatorKind.POSTDEC);
-
+        super.printLogMutation(op.getPosition().toString());
     }
 }

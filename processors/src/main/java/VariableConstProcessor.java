@@ -30,9 +30,9 @@ public class VariableConstProcessor extends AbstractProc {
                 newExpression.setValue("true");
             else {
                 newExpression.setValue(var.getDefaultExpression().toString());
-                System.out.println(newExpression);
             }
             var.setDefaultExpression(newExpression);
+            super.printLogMutation(var.getPosition().toString());
         }
 
     }

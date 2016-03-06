@@ -26,5 +26,6 @@ public class BinaryOperatorProcessor extends AbstractProc {
 				|| op.getKind().equals(BinaryOperatorKind.MOD)){
 			op.setKind(BinaryOperatorKind.DIV);
 		}
+		super.process(op);
 	}
 }

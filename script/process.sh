@@ -13,3 +13,5 @@ echo -e "OK\n"
 
 #On exécute un script python pour lire le rapport XML des tests et l'inserer dans un .txt
 ./python/data.py $1 $2
+
+rm ./python/report/logMutation.txt

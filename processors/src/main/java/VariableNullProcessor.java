@@ -34,9 +34,9 @@ public class VariableNullProcessor extends AbstractProc {
                 str[0].contains("char") ||
                 str[0].contains("long"))
             return;
-        //System.out.println(str[0]);
         String newDeclare = "null";
         newStatement.setValue(newDeclare);
         state.setAssignment(newStatement);
+        super.printLogMutation(state.getPosition().toString());
     }
 }
