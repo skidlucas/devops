@@ -11,11 +11,8 @@ from os.path import isfile, join
 data = open('./python/report/data.txt', 'a')
 
 #Ceci est un langage de merde ->
-testpath = subprocess.check_output("find ./transformation-code/src/test/java -iname \"*.java\" | xargs dirname | sort -u",
-									shell=True).strip().decode('utf-8')
-
-#Doit vérifier qu'il finit par .java pour éviter les .java.old
-testfiles = [f for f in listdir(testpath) if all([isfile(join(testpath, f)), f.endswith('.java')])]	
+testfiles = subprocess.check_output("find ./transformation-code/src/test/java -iname \"*.java\" | xargs -n1 basename", 
+									 shell=True).decode('utf-8').splitlines()
 state = 1 # etat du mutant
 
 data.write('proc ' + sys.argv[1] + '\n')
@@ -67,8 +64,8 @@ for elt in testfiles:
 		newA = int(a) + 1
 		newN = int(n)
 
-		shDiff = './python/diffTxt.sh' + ' ' + sys.argv[1]
-		os.system(shDiff)
+		#shDiff = './python/diffTxt.sh' + ' ' + sys.argv[1]
+		#os.system(shDiff)
 	elif (state == 0) : #fail
 		newD = int(d) + 1
 		newT = int(t)

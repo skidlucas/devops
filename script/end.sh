@@ -9,7 +9,13 @@
 tests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
 for test in ${tests[@]}
 	do
-		mv $test.old $test
+		directory=($(dirname $test))
+		name=($(basename $test | rev | cut -d '.' -f2 | rev))
+		ext=($(basename $test | rev | cut -d '.' -f1 | rev))
+		realName=$name.$ext
+		
+		rm $test
+		mv $directory/$realName.old $directory/$realName
 	done
 
 #On supprime les fichiers temporaires

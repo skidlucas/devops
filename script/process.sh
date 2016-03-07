@@ -11,6 +11,25 @@ echo "Exécution des tests sur le code source avec les mutations réalisées par
 mvn test -pl transformation-code > "./Maven Logs/codeWith$1.txt"
 echo -e "OK\n"
 
+tests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
+for test in ${tests[@]}
+	do
+		packageName=($(grep "^package" $test | cut -d " " -f2 | head -c -2))
+		directory=($(dirname $test))
+		testName=($(basename $test))
+
+		#Vérifie la taille du nom du test en tokens séparés par des .
+		IFS='.' read -r -a name <<< "$testName"
+		if [ "${#name[@]}" -ge 3 ]; then #S'il y a plus de 3 tokens, on renomme pas
+			:
+		else #sinon on renomme
+			if [[ -z "$packageName" ]]; then
+				:
+			else	
+				mv $test $directory/$packageName.$testName
+			fi
+		fi
+	done
 #On exécute un script python pour lire le rapport XML des tests et l'inserer dans un .txt
 ./python/data.py $1 $2
 
