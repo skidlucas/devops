@@ -23,7 +23,6 @@ for elt in testfiles:
 	except IOError:
 		print("ERROR can't open " + testreport + " (doesn't exist?)")
 		state = 2 # mon mutant est mort-né
-		os.system('./python/diffTxt.sh' + ' ' + sys.argv[1])
 	else:
 		for line in xml:
 			clashSpace = line.strip()
@@ -62,6 +61,9 @@ for elt in testfiles:
 		newT = int(t)
 		newA = int(a) + 1
 		newN = int(n)
+
+		shDiff = './python/diffTxt.sh' + ' ' + sys.argv[1]
+		os.system(shDiff)
 	elif (state == 0) : #fail
 		newD = int(d) + 1
 		newT = int(t)
