@@ -5,6 +5,7 @@
 #On termine le .html
 ./python/endHTML.py
 
+#On remet les fichiers de test comme ils étaient
 tests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
 for test in ${tests[@]}
 	do

@@ -2,15 +2,20 @@
 
 import sys
 import os
+import subprocess
 from os import listdir
 from os.path import isfile, join
 
 
+
 data = open('./python/report/data.txt', 'a')
 
-testpath = './transformation-code/src/test/java/'
-testfiles = [f for f in listdir(testpath) if isfile(join(testpath, f))]
+#Ceci est un langage de merde ->
+testpath = subprocess.check_output("find ./transformation-code/src/test/java -iname \"*.java\" | xargs dirname | sort -u",
+									shell=True).strip().decode('utf-8')
 
+#Doit vérifier qu'il finit par .java pour éviter les .java.old
+testfiles = [f for f in listdir(testpath) if all([isfile(join(testpath, f)), f.endswith('.java')])]	
 state = 1 # etat du mutant
 
 data.write('proc ' + sys.argv[1] + '\n')
