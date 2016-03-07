@@ -76,8 +76,8 @@ QUESTIONS pour vendredi 04/03:
 
 TODO RENDU:
 0 afficher les probabilités choisies pour chaque proc sur le html (modifier le python)
-- simon tu dois vérifier le point au dessus parce que je suis pas sur de ce que j'ai fait
 - afficher un graphique par mutation ou un général? => à réfléchir
 - IL FAUT spécifier les critères des projets pour qu'ils soient testables par notre framework
 0 Verifier deleteInstruction, loopIteration, variableNull
-- BOUCLES INFINIES?
+- BOUCLES INFINIES? à voir dans le pom 
+- ATTENTION CHEMINS EN DUR PARTOUT DANS LES SCRIPTS

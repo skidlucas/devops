@@ -1,5 +1,6 @@
 #! /bin/bash
 
+tests=($(find ./transformation-code/src/test/java/ -type f))
 #On ajoute le processeur dans le pom.xml
 sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$1\2/" ./transformation-code/pom.xml
 
@@ -7,7 +8,10 @@ sed -i "s/\(<processor>\).*\(<\/processor>\)/\1$1\2/" ./transformation-code/pom.
 sed -i "s/K_LIKELIHOOD = .*;/K_LIKELIHOOD = $2;/"  ./processors/src/main/java/AbstractProc.java
 
 #On ajoute un timeout à tous les tests pour empecher les boucles infinies
-sed -i -e "/(timeout=10000)/ s/// ; /^\s*@Test/s/$/(timeout=10000)/" ./transformation-code/src/test/java/*.java
+for test in ${tests[@]}
+	do
+		sed -i -e "/(timeout=10000)/ s/// ; /^\s*@Test/s/$/(timeout=10000)/" $test
+	done
 
 echo "Exécution des tests sur le code source avec les mutations réalisées par le processeur $1 à $2%..."
 #On lance mvn clean test qui va se servir de spoon pour muter le code source fourni en paramètre du script
