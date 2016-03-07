@@ -23,7 +23,6 @@ public class DeleteInstrProcessor extends AbstractProc {
         }
         CtStatement state = (CtStatement) candidate;
         if(!checkSelector() && !isToBeDeleted()){
-            System.out.println("debut suppresion");
             CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
             newStatement.setValue("");
             state.replace(newStatement);
