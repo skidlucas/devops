@@ -15,7 +15,6 @@ for test in ${tests[@]}
 #On supprime les fichiers temporaires
 rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt ./script/repositories.txt
 rm ./python/report/data.txt
-rm ./python/report/logMutation.txt
 rm ./python/count.txt
 
 
