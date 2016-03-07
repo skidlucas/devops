@@ -5,6 +5,12 @@
 #On termine le .html
 ./python/endHTML.py
 
+tests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
+for test in ${tests[@]}
+	do
+		mv $test.old $test
+	done
+
 #On supprime les fichiers temporaires
 rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt ./script/repositories.txt
 rm ./python/report/data.txt
