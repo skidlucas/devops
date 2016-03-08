@@ -45,4 +45,5 @@ for newtest in ${newtests[@]}
 		mv $newtest $directory/$realName
 	done
 
-rm ./python/report/logMutation.txt
+rm -f ./python/report/logMutation.txt
+rm -f ./transformation-code/target/surefire-reports/*

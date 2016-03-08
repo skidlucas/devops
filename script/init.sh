@@ -56,7 +56,7 @@ tests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
 for test in ${tests[@]}
 	do
 		cp $test $test.old #copie pour pas modifier directement le source importé
-		sed -i -e "/(timeout=10000)/ s/// ; /^\s*@Test/s/$/(timeout=10000)/" $test
+		sed -i -e "/(timeout=5000)/ s/// ; /^\s*@Test/s/$/(timeout=5000)/" $test
 	done
 
 #Permet à l'utilisateur de choisir les processeurs à invoquer
