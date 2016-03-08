@@ -1,8 +1,13 @@
-import spoon.reflect.code.CtCodeSnippetStatement;
-import spoon.reflect.code.CtStatement;
+import spoon.reflect.code.*;
+import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtElement;
+import spoon.reflect.declaration.CtEnum;
 import spoon.support.reflect.code.CtBinaryOperatorImpl;
+import spoon.support.reflect.code.CtCodeSnippetStatementImpl;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -14,19 +19,18 @@ public class DeleteInstrProcessor extends AbstractProc {
 
     @Override
     public boolean isToBeProcessed(CtElement candidate) {
-        return candidate instanceof CtStatement;
+        return candidate instanceof CtIf;
     }
 
     public void process(CtElement candidate) {
-        if (!(candidate instanceof CtStatement) || candidate instanceof CtBinaryOperatorImpl) {
+        if (!(candidate instanceof CtIf) ) {
             return;
         }
-        CtStatement state = (CtStatement) candidate;
         if(!checkSelector() && !isToBeDeleted()){
             CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
             newStatement.setValue("");
-            state.replace(newStatement);
-            super.printLogMutation(state.getPosition().toString());
+            ((CtIf) candidate).replace(newStatement);
+            super.printLogMutation(candidate.getPosition().toString());
         }
     }
 
