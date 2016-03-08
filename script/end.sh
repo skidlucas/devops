@@ -12,6 +12,13 @@ for test in ${tests[@]}
 		mv $test.old $test
 	done
 
+#On supprime les fichiers sources.diff
+sources=($(find ./transformation-code/target/generated-sources/spoon/ -type f -iname "*.diff"))
+for source in ${sources[@]}
+	do
+		rm -f $source
+	done
+
 #On supprime les fichiers temporaires
 rm ./script/dependencies.txt ./script/plugins.txt ./script/selector.txt ./script/repositories.txt
 rm ./python/report/data.txt

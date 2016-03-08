@@ -23,7 +23,8 @@ for elt in testfiles:
 	try:
 		xml = open(testreport, 'r')
 	except IOError:
-		print("ERROR can't open " + testreport + " (doesn't exist?)")
+		#Pas sur de print cette erreur
+		#print("ERROR can't open " + testreport + " (doesn't exist?)")
 		state = 2 # mon mutant est mort-né
 	else:
 		for line in xml:
@@ -64,8 +65,8 @@ for elt in testfiles:
 		newA = int(a) + 1
 		newN = int(n)
 
-		#shDiff = './python/diffTxt.sh' + ' ' + sys.argv[1]
-		#os.system(shDiff)
+		shDiff = './script/diffTxt.sh' + ' ' + sys.argv[1]
+		os.system(shDiff)
 	elif (state == 0) : #fail
 		newD = int(d) + 1
 		newT = int(t)

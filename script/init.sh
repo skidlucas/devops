@@ -59,5 +59,13 @@ for test in ${tests[@]}
 		sed -i -e "/(timeout=5000)/ s/// ; /^\s*@Test/s/$/(timeout=5000)/" $test
 	done
 
+#On compile sans processeur pour avoir un diff plus efficace par la suite
+mvn compile -pl transformation-code > /dev/null
+sources=($(find ./transformation-code/target/generated-sources/spoon/ -type f -iname "*.java"))
+for source in ${sources[@]}
+	do
+		cp $source $source.diff
+	done
+
 #Permet à l'utilisateur de choisir les processeurs à invoquer
 ./script/choice.sh 

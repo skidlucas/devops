@@ -9,7 +9,7 @@ sed -i "s/K_LIKELIHOOD = .*;/K_LIKELIHOOD = $2;/"  ./processors/src/main/java/Ab
 echo "Exécution des tests sur le code source avec les mutations réalisées par le processeur $1 à $2%..."
 #On lance mvn clean test qui va se servir de spoon pour muter le code source fourni en paramètre du script
 mvn test -pl transformation-code > "./Maven Logs/codeWith$1.txt"
-echo -e "OK\n"
+echo -e "OK"
 
 tests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
 for test in ${tests[@]}
@@ -31,7 +31,9 @@ for test in ${tests[@]}
 		fi
 	done
 #On exécute un script python pour lire le rapport XML des tests et l'inserer dans un .txt
+echo "Traitement des résultats..."
 ./python/data.py $1 $2
+echo -e "OK\n"
 
 #On remet les fichiers de test comme ils étaient
 newtests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
@@ -42,7 +44,7 @@ for newtest in ${newtests[@]}
 		ext=($(basename $newtest | rev | cut -d '.' -f1 | rev))
 		realName=$name.$ext
 		
-		mv $newtest $directory/$realName
+		mv $newtest $directory/$realName 2> /dev/null
 	done
 
 rm -f ./python/report/logMutation.txt
