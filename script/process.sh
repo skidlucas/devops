@@ -37,7 +37,6 @@ for test in ${tests[@]}
 newtests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
 for newtest in ${newtests[@]}
 	do
-		echo "$newtest"
 		directory=($(dirname $newtest))
 		name=($(basename $newtest | rev | cut -d '.' -f2 | rev))
 		ext=($(basename $newtest | rev | cut -d '.' -f1 | rev))
