@@ -33,4 +33,17 @@ for test in ${tests[@]}
 #On exécute un script python pour lire le rapport XML des tests et l'inserer dans un .txt
 ./python/data.py $1 $2
 
+#On remet les fichiers de test comme ils étaient
+newtests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
+for newtest in ${newtests[@]}
+	do
+		echo "$newtest"
+		directory=($(dirname $newtest))
+		name=($(basename $newtest | rev | cut -d '.' -f2 | rev))
+		ext=($(basename $newtest | rev | cut -d '.' -f1 | rev))
+		realName=$name.$ext
+		
+		mv $newtest $directory/$realName
+	done
+
 rm ./python/report/logMutation.txt
