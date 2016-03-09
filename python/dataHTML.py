@@ -30,7 +30,7 @@ for line in dataTXT:
 		html.write('<button type="button" class="close" data-dismiss="modal">&times;</button>')
 		html.write('<h4 class="modal-title">'+split[1].strip()+': '+split[2].strip()+'</h4>')
 		html.write('</div><div class="modal-body">')
-		html.write('<embed src="diff/DIFF_'+split[1].strip()+'_'+split[2].strip()+'.txt" width="500" height="300"/></div>')
+		html.write('<object data="diff/DIFF_'+split[1].strip()+'_'+split[2].strip()+'.txt" width="500" height="300"></object></div>')
 		html.write('<div class="modal-footer">')
 		html.write('<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>')
 		html.write('</div></div></div></div>')		
