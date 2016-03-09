@@ -8,7 +8,7 @@ html = open('./python/report/rapMutant.html', 'a')
 for line in dataTXT:
 	split = line.split('_')
 	if split[0] == 'proc' :
-		html.write('\t\t<br />\n\t\t<div class="container processor">')
+		html.write('\t\t<br />\n\t\t</div><div class="container processor">')
 		html.write(split[1].strip())
 		#html.write('</div>\n')
 		#html.write('\t\t<div class="resultsPerProc">\n')
