@@ -29,8 +29,6 @@ if ls $absolutePath/src &>/dev/null
 fi
 
 
-
-
 #On fusionne les deux pom.xml en important les dépendances et les plugins du src à muter
 echo "Importation des dépendances et des plugins du projet à muter..."
 matchDep='<dependencies>'
@@ -63,7 +61,7 @@ for test in ${tests[@]}
 	done
 
 #On compile sans processeur pour avoir un diff plus efficace par la suite
-mvn compile -pl transformation-code > /dev/null
+mvn compile -pl transformation-code &> /dev/null 
 sources=($(find ./transformation-code/target/generated-sources/spoon/ -type f -iname "*.java"))
 for source in ${sources[@]}
 	do
