@@ -5,17 +5,20 @@ import os
 
 dataTXT = open('./python/report/data.txt', 'r')
 html = open('./python/report/rapMutant.html', 'a')
+html.write('<p id="description">Vous pouvez cliquer sur les processeurs afin d\'obtenir en détails les résultats obtenus en effectuant un <i>diff</i> entre les fichiers sources et les fichiers mutés.</p>')
 for line in dataTXT:
 	split = line.split('_')
 	if split[0] == 'proc' :
-		html.write('\t\t<br />\n\t\t</div><div class="container processor">')
+		html.write('\t\t<br />\n\t\t</div><button data-toggle="collapse" data-target="#'+split[1].strip()+'"')
+		html.write(' class="btn btn-lg btn-default processor">')
 		html.write(split[1].strip())
+		processor = split[1].strip()
 		#html.write('</div>\n')
 		#html.write('\t\t<div class="resultsPerProc">\n')
 	elif split[0] == 'selec' :
-		html.write(' à ' + split[1].strip() + '%')
-		html.write('</div><div class="container">\n')
-		#html.write('<div class="resultsPerProc">\n')
+		html.write(' (' + split[1].strip() + '%)  ')
+		html.write('<span class="glyphicon glyphicon-menu-down"></span></button>\n')
+		html.write('<div id="'+processor+'" class="container collapse">\n')
 	elif split[0] == 'DIFF' :
 		html.write('<br /><a href="#myModal' +split[1].strip()+'_'+split[2].strip())
 		html.write('" data-toggle="modal" data-target="#myModal' +split[1].strip()+'_'+split[2].strip() +'">')

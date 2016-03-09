@@ -7,6 +7,11 @@ h1,h3 {
 	text-align: center;
 }
 
+#description {
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
 .hidden{
 	display:none;
 }
@@ -25,5 +30,7 @@ h1,h3 {
 
 
 .processor{
-	text-decoration: underline;
+	margin-bottom: 20px;
+	margin-left: 50px;
+	display: block;
 }
