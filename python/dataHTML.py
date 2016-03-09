@@ -5,7 +5,9 @@ import os
 
 dataTXT = open('./python/report/data.txt', 'r')
 html = open('./python/report/rapMutant.html', 'a')
-html.write('<p id="description">Vous pouvez cliquer sur les processeurs afin d\'obtenir en détails les résultats obtenus en effectuant un <i>diff</i> entre les fichiers sources et les fichiers mutés.</p>')
+html.write('<p id="description">Vous pouvez cliquer sur les processeurs afin d\'obtenir en détails les résultats obtenus en effectuant un <i>diff</i> entre les fichiers sources et les fichiers mutés.')
+html.write('<br/> Les lignes commençant par \'<\' sont les sources, celles commençant par \'>\' sont les mutants.</p>')
+
 for line in dataTXT:
 	split = line.split('_')
 	if split[0] == 'proc' :
