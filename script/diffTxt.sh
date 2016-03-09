@@ -4,7 +4,7 @@ SPOON_DIR=($(find ./transformation-code/target/generated-sources/spoon -type f -
 
 for dir in ${SPOON_DIR[@]}
 do
-	for file in $(cat ./python/report/logMutation.txt)
+	for file in $(cat ./python/report/logMutation.txt 2> /dev/null)
 	do
 		fname=($(basename "$file"))
 		count=($(cd $dir && ls $fname 2>/dev/null | wc -l))
@@ -16,7 +16,7 @@ do
 
 			#si le fichier diff est vide on le supprime
 			if [ -s $difftxt ]; then
-				echo "DIFF_$1_$fbname.txt" >> ./python/report/data.txt
+				echo "DIFF_$1_$fbname" >> ./python/report/data.txt
 			else
 				rm $difftxt
 			fi

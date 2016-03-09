@@ -23,7 +23,8 @@ html.write('\t\t<input id="success" style="display: none" value="' + a + '">\n')
 html.write('\t\t<input id="stillborn" style="display: none" value="' + n + '">\n')
 html.write('\t\t<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>\n')
 
-
+html.write('\t\t<img src="css/images/deadpool.jpg" width="150" height="100"class="img-responsive img-circle deadpoolLeft">\n')
+html.write('\t\t<img src="css/images/deadpool.jpg" width="150" height="100"class="img-responsive img-circle deadpoolRight">\n')
 html.write('\t\t<script src="https://code.highcharts.com/highcharts.js"></script>\n')
 html.write('\t\t<script src="https://code.highcharts.com/modules/exporting.js"></script>\n')
 html.write('\t\t<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>\n')

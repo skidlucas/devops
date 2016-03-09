@@ -7,26 +7,23 @@ h1,h3 {
 	text-align: center;
 }
 
-#deadpoolLeft{
-	float: left;
+.hidden{
+	display:none;
 }
 
-#deadpoolRight{
-	float: right;
+.deadpoolLeft{
+	float:left;
 }
+.deadpoolRight{
+	float: right;
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
 
 .processor{
 	text-decoration: underline;
-}
-
-.resultsPerProc{
-	
-}
-
-.processorName {
-	font-weight: bold;
-	font-size: 15px;
-}
-.fail {
-	color: red;
 }

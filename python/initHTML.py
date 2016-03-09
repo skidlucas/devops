@@ -17,10 +17,10 @@ html.write('\t\t<link href="css/bootstrap.min.css" rel="stylesheet">\n')
 html.write('\t\t<link href="css/style.css" rel="stylesheet">\n')
 html.write('\t</head>\n')
 html.write('\t<body>\n')
+html.write('\t\t<img src="css/images/deadpool.jpg" width="150" height="100"class="img-responsive img-circle deadpoolLeft">\n')
+html.write('\t\t<img src="css/images/deadpool.jpg" width="150" height="100"class="img-responsive img-circle deadpoolRight">\n')
 html.write('\t\t<h1>Rapport sur la guerre des mutants</h1>\n')
 html.write('\t\t<h3>réalisé par Lucas Martinez, Simon Paris et Lucas Soumille</h3><br />\n')
-html.write('\t\t<img id="deadpoolLeft" src="css/images/deadpool.jpg" width="300" height="200"class="img-responsive img-circle">\n')
-html.write('\t\t<img id="deadpoolRight" src="css/images/deadpool.jpg" width="300" height="200"class="img-responsive img-circle">\n')
 
 #init count.txt
 c = open('./python/count.txt', 'w')

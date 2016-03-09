@@ -32,7 +32,9 @@ for test in ${tests[@]}
 	done
 #On exécute un script python pour lire le rapport XML des tests et l'inserer dans un .txt
 echo "Traitement des résultats..."
-./python/data.py $1 $2
+echo -e "proc_$1\nselec_$2" >> ./python/report/data.txt
+./python/data.py
+./script/diffTxt.sh $1
 echo -e "OK\n"
 
 #On remet les fichiers de test comme ils étaient

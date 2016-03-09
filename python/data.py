@@ -15,8 +15,6 @@ testfiles = subprocess.check_output("find ./transformation-code/src/test/java -i
 									 shell=True).decode('utf-8').splitlines()
 state = 1 # etat du mutant
 
-data.write('proc ' + sys.argv[1] + '\n')
-data.write('selec ' + sys.argv[2] + '\n')
 for elt in testfiles:
 	test = os.path.splitext(elt)[0]
 	testreport = './transformation-code/target/surefire-reports/TEST-' + test + '.xml'
@@ -64,9 +62,6 @@ for elt in testfiles:
 		newT = int(t)
 		newA = int(a) + 1
 		newN = int(n)
-
-		# shDiff = './script/diffTxt.sh' + ' ' + sys.argv[1]
-		# os.system(shDiff)
 	elif (state == 0) : #fail
 		newD = int(d) + 1
 		newT = int(t)
@@ -84,6 +79,3 @@ for elt in testfiles:
 		newN = int(n) + 1
 	cWrite.write(str(newD) + '.' + str(newT) + '.' + str(newA) + '.' + str(newN))
 	cWrite.close()
-
-shDiff = './script/diffTxt.sh' + ' ' + sys.argv[1]
-os.system(shDiff)

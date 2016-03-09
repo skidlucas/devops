@@ -4,6 +4,8 @@ echo -e "Vous avez indiqué que le path de votre projet est le suivant : $1\n"
 echo "Nettoyage préalable..." #faire les vérifs nécessaires
 
 rm -rf ./transformation-code/*
+rm -rf ./python/report/diff/*
+rm -rf ./python/report/data.txt
 mkdir -p ./transformation-code/src/
 cp ./pomTransfoDefault.xml ./transformation-code/pom.xml #On copie le pom qui provient de notre projet
 echo -e "OK\n"
@@ -49,7 +51,7 @@ echo -e "OK\n"
 echo "Compilation des processeurs..."
 mkdir -p "Maven Logs"
 mvn package -pl processors > "./Maven Logs/processors.txt"
-echo -e "OK\n"
+
 
 #On ajoute un timeout à tous les tests pour empecher les boucles infinies
 tests=($(find ./transformation-code/src/test/java/ -type f -iname "*.java"))
@@ -66,6 +68,7 @@ for source in ${sources[@]}
 	do
 		cp $source $source.diff
 	done
+echo -e "OK\n"
 
 #Permet à l'utilisateur de choisir les processeurs à invoquer
 ./script/choice.sh 
