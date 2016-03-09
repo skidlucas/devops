@@ -22,3 +22,4 @@ python/count.txt
 transformation-code/
 processors/target/
 Maven Logs/
+python/report/diff/*

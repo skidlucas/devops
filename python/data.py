@@ -65,8 +65,8 @@ for elt in testfiles:
 		newA = int(a) + 1
 		newN = int(n)
 
-		shDiff = './script/diffTxt.sh' + ' ' + sys.argv[1]
-		os.system(shDiff)
+		# shDiff = './script/diffTxt.sh' + ' ' + sys.argv[1]
+		# os.system(shDiff)
 	elif (state == 0) : #fail
 		newD = int(d) + 1
 		newT = int(t)
@@ -84,3 +84,6 @@ for elt in testfiles:
 		newN = int(n) + 1
 	cWrite.write(str(newD) + '.' + str(newT) + '.' + str(newA) + '.' + str(newN))
 	cWrite.close()
+
+shDiff = './script/diffTxt.sh' + ' ' + sys.argv[1]
+os.system(shDiff)

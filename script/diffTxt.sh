@@ -11,8 +11,15 @@ do
 
 		if [ $count -gt 0 ]; then 
 			fbname=$(basename "$file" .java)
-			diff $dir/$fbname.java.diff $dir/$fbname.java > ./python/report/diff/DIFF_$1_$fbname.txt
+			difftxt="./python/report/diff/DIFF_$1_$fbname.txt"
+			diff $dir/$fbname.java.diff $dir/$fbname.java > $difftxt
+
+			#si le fichier diff est vide on le supprime
+			if [ -s $difftxt ]; then
+				echo "DIFF_$1_$fbname.txt" >> ./python/report/data.txt
+			else
+				rm $difftxt
+			fi
 		fi
-		
 	done
 done
