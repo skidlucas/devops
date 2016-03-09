@@ -6,6 +6,7 @@ echo "Nettoyage préalable..." #faire les vérifs nécessaires
 rm -rf ./transformation-code/*
 rm -rf ./python/report/diff/*
 rm -rf ./python/report/data.txt
+mkdir -p ./python/report/diff
 mkdir -p ./transformation-code/src/
 cp ./pomTransfoDefault.xml ./transformation-code/pom.xml #On copie le pom qui provient de notre projet
 echo -e "OK\n"
