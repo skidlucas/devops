@@ -14,7 +14,7 @@ Voici les mutations disponibles :
 * BinaryOperatorProcessor : Echange les operateurs binaires. 
 Changement des + en -, des - en +, des / en * et des * ou % en /
 
-* DeleteInstrProcessor : Supprime les if et leur corps.
+* DeleteIfProcessor : Supprime les if et leur corps.
  
 * LogicalExpressionProcessor : Echange les opérateurs de comparaison dans les conditions.
 Changement des != en ==, des == en != et rajout ou suppression des = pour les >, <, >= et <=

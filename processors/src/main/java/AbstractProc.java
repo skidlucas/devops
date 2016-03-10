@@ -35,6 +35,10 @@ public abstract class AbstractProc extends AbstractProcessor<CtElement> {
         printLogMutation(candidate.getPosition().toString());
     }
 
+    /**
+     * Write in the file the file names which contain at least one mutation
+     * @param fileName
+     */
     protected void printLogMutation(String fileName){
         try {
             allModifiedFiles.add(processFileName(fileName));
@@ -48,6 +52,11 @@ public abstract class AbstractProc extends AbstractProcessor<CtElement> {
         }
     }
 
+    /**
+     * Parse the filename
+     * @param filename
+     * @return
+     */
     private String processFileName(String filename){
         String nameWithoutParent = filename.substring(1, filename.length() - 1);
         return nameWithoutParent.split(":")[0];

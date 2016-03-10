@@ -25,7 +25,7 @@ public class VisibilityProcessor extends AbstractProc{
         Iterator i = allModifier.iterator();
         while(i.hasNext()){
             if(i.next().equals(ModifierKind.PUBLIC)){
-                i.remove();
+                i.remove(); //met la visibilité en package
             }
         }
         super.printLogMutation(method.getPosition().toString());

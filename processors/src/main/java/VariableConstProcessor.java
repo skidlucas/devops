@@ -19,7 +19,7 @@ public class VariableConstProcessor extends AbstractProc {
             return;
         CtCodeSnippetExpression newExpression = getFactory().Core().createCodeSnippetExpression();
         CtVariable var = (CtVariable)candidate;
-        if(var.getModifiers().toString().contains("static")){
+        if(var.getModifiers().toString().contains("static")){ //assigne la valeur d'une borne aux variables statiques
             if(var.getType().toString().contains("int"))
                 newExpression.setValue("0x7fffffff");
             else if(var.getType().toString().contains("double"))

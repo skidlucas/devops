@@ -13,9 +13,7 @@ import java.util.Random;
 /**
  * Created by lucas on 04/03/16.
  */
-public class DeleteInstrProcessor extends AbstractProc {
-
-    private static final int K_LIKELIHOOD_DELETE = 10;
+public class DeleteIfProcessor extends AbstractProc {
 
     @Override
     public boolean isToBeProcessed(CtElement candidate) {
@@ -26,16 +24,11 @@ public class DeleteInstrProcessor extends AbstractProc {
         if (!(candidate instanceof CtIf) ) {
             return;
         }
-        if(!checkSelector() && !isToBeDeleted()){
+        if(!checkSelector()){
             CtCodeSnippetStatement newStatement = getFactory().Core().createCodeSnippetStatement();
             newStatement.setValue("");
-            ((CtIf) candidate).replace(newStatement);
+            ((CtIf) candidate).replace(newStatement);// supprime le if
             super.printLogMutation(candidate.getPosition().toString());
         }
-    }
-
-    private boolean isToBeDeleted(){
-        Random rand = new Random();
-        return (K_LIKELIHOOD_DELETE < rand.nextInt(100));
     }
 }

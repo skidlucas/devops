@@ -26,7 +26,7 @@ public class LoopIterationProcessor extends AbstractProc {
         CtCodeSnippetStatement newDeclare = getFactory().Core().createCodeSnippetStatement();
         CtCodeSnippetStatement endLoop = getFactory().Core().createCodeSnippetStatement();
         CtStatement body = loop.getBody();//je recupere le corps de la boucle
-        newDeclare.setValue("{int Round100Loop" + id +" = 0");
+        newDeclare.setValue("{int Round100Loop" + id +" = 0"); //je rajoute la variable pour faire les 100 itérations
         loop.insertBefore(newDeclare);
         if(loop instanceof CtForImpl){
             CtForImpl forLoop = (CtForImpl) loop;
@@ -40,7 +40,7 @@ public class LoopIterationProcessor extends AbstractProc {
             whileLoop.setLoopingExpression(newExpr);//je supprime la condition
         }
         newStatement.setValue("if(Round100Loop" + id++ +"++ == 100)" +
-                "break");
+                "break"); //on break quand on a fini les 100 itérations
         CtStatementList listInstInBoy = (CtStatementList) body;
         listInstInBoy.addStatement(newStatement);
         endLoop.setValue("}//");

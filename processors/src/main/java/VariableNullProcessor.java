@@ -33,7 +33,7 @@ public class VariableNullProcessor extends AbstractProc {
                 str[0].contains("boolean") ||
                 str[0].contains("char") ||
                 str[0].contains("long"))
-            return;
+            return; //ne met pas a null les types primitifs
         String newDeclare = "null";
         newStatement.setValue(newDeclare);
         state.setAssignment(newStatement);
