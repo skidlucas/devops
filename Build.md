@@ -1,13 +1,12 @@
-Build.md :
-Comment construire votre framework
+Build.md : Environnement nécessaire au build
 
-Notre framework est disponible pour les projets Maven (Java)
+##  Notre framework est disponible pour des projets Maven (Java)
 
-Dépendance nécessaire à l'exécution du Framework
-    - BASH (Lister toutes les commandes utilisées)
-    - Java
-    - Maven 3 
-    - JUnit
-    - Python
-    - Un navigateur web
+# Dépendances nécessaires à l'exécution du Framework
+* BASH (Lister toutes les commandes utilisées)
+* Java
+* Maven 3 
+* JUnit
+* Python
+* Un navigateur web (testé sur Firefox et Chrome)
 
