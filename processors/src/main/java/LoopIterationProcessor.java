@@ -26,7 +26,7 @@ public class LoopIterationProcessor extends AbstractProc {
         CtCodeSnippetStatement newDeclare = getFactory().Core().createCodeSnippetStatement();
         CtCodeSnippetStatement endLoop = getFactory().Core().createCodeSnippetStatement();
         CtStatement body = loop.getBody();//je recupere le corps de la boucle
-        newDeclare.setValue("{int Round100Loop" + id +" = 0"); //je rajoute la variable pour faire les 100 itérations
+        newDeclare.setValue("{ int Round100Loop" + id +" = 0"); //je rajoute la variable pour faire les 100 itérations
         loop.insertBefore(newDeclare);
         if(loop instanceof CtForImpl){
             CtForImpl forLoop = (CtForImpl) loop;
