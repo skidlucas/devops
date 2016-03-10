@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public abstract class AbstractProc extends AbstractProcessor<CtElement> {
 
-    private static final int K_LIKELIHOOD = 100;
+    private static final int K_LIKELIHOOD = 50;
     private Random rand;
     private static final String K_PATH_FILE = "./python/report/logMutation.txt";
     private Set<String> allModifiedFiles = new HashSet<>();
