@@ -7,7 +7,7 @@ Le framework est téléchargeable  sur Github.
 Une fois le fichier téléchargé et décompressé, Veuillez lancer le script framework.sh disponible à la racine du dossier
 en donnant en argument le chemin du fichier source de votre projet. 
 
-> ./framework.sh PATH_PROJET_
+> ./framework.sh PATH_PROJET
 
 Après le lancement, vous allez être dirigé dans le menu ou vous pouvez choisir vos mutations ainsi que votre sélecteur.
 
